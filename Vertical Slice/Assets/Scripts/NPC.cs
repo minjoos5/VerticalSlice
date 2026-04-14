@@ -19,12 +19,12 @@ public class NPC : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.SetDestination(target.position);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        agent.SetDestination(target.position);
     }
 }
