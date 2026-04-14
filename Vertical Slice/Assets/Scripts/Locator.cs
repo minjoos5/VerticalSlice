@@ -18,6 +18,7 @@ public class Locator : MonoBehaviour
         Instance = this;   
     }
 
+    // class lists below
     public Player _player;
     public Items _items;
     public NPC _NPC;
