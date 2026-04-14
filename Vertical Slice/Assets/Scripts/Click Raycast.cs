@@ -9,7 +9,7 @@ public class ClickRaycast : MonoBehaviour
     [SerializeField] Camera _mainCamera;
 
     public bool _itemDetected = false;
-   void Update()
+    void Update()
     {
         Vector3 _cursorPos = Input.mousePosition;
 
