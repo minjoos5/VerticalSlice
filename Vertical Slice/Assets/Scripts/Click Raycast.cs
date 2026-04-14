@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickRaycast : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Camera _mainCamera;
 
-    // Update is called once per frame
-    void Update()
+    public bool _itemDetected = false;
+   void Update()
     {
-        
+        Vector3 _cursorPos = Input.mousePosition;
+
+        Ray _clickDetect = _mainCamera.ScreenPointToRay(_cursorPos);
+
+        RaycastHit _raycastHit;
+
+        _itemDetected = Physics.Raycast (_clickDetect, out _raycastHit);
+
+        if (_itemDetected)
+        {
+            Locator.Instance._items.itemClicked();
+        }
     }
 }

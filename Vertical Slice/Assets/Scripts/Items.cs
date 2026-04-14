@@ -14,8 +14,11 @@ public class Items : MonoBehaviour
     }
 
     
-    void Update()
+    public void itemClicked()
     {
-        
+        if (Locator.Instance._clicked._itemDetected == true)
+        {
+            GameObject.SetActive(false);
+        }
     }
 }
