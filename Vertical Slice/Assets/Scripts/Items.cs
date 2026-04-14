@@ -14,11 +14,10 @@ public class Items : MonoBehaviour
     }
 
     
-    public void itemClicked()
+    public void OnMouseDown()
     {
-        if (Locator.Instance._clicked._itemDetected == true)
-        {
-            gameObject.SetActive(false);
-        }
+        Debug.Log("clicked!!!!");
+        gameObject.SetActive(false);
+        
     }
 }

@@ -19,9 +19,6 @@ public class ClickRaycast : MonoBehaviour
 
         _itemDetected = Physics.Raycast (_clickDetect, out _raycastHit);
 
-        if (_itemDetected)
-        {
-            Locator.Instance._items.itemClicked();
-        }
+        //Locator.Instance._items.OnMouseDown();
     }
 }
