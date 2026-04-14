@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 530091448}
   m_Layer: 0
   m_Name: Player Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 794740962}
   m_Layer: 0
   m_Name: Click Detector Raycast
-  m_TagString: Untagged
+  m_TagString: Raycast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 1022283566}
   m_Layer: 0
   m_Name: Locator
-  m_TagString: Untagged
+  m_TagString: Locator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 1898233268}
   m_Layer: 0
   m_Name: Item Manager
-  m_TagString: Untagged
+  m_TagString: Item Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1754,9 +1754,9 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1022283567}
+  - {fileID: 794740963}
+  - {fileID: 1898233270}
   - {fileID: 1006478129}
   - {fileID: 227357334}
   - {fileID: 530091452}
-  - {fileID: 794740963}
-  - {fileID: 1898233270}
   - {fileID: 2053236694}
