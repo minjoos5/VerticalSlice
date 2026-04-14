@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
-
     [SerializeField] private float _runSpeed = 10f;
     [SerializeField] private float _mouseSensitivity = 100f;
 
@@ -45,6 +44,12 @@ public class Player : MonoBehaviour
         {
             transform.position += _playerMovement * _runSpeed * Time.deltaTime;
         }
+
+        /*if (Player attacked by the npc)
+        {
+            shows game over UI
+        }
+        */
     }
 
 }
