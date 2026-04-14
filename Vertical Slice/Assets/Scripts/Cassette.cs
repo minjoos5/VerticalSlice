@@ -9,4 +9,10 @@ public class Cassette : Items
     [SerializeField] GameObject _trueCas;
 
     
+
+    /*public void OnTriggerEnter(Collider other)
+    {
+        // if the player clicks true cassette then it will show nothing
+        // if the player clicks false cassette then it will show wrong message
+    }*/
 }

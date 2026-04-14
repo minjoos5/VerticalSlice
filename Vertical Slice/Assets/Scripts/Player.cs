@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         transform.Rotate(Vector3.up * _xMouse);
 
         _rotationX -= _yMouse;
-        _rotationX = Mathf.Clamp(_rotationX, -60f, 60f);
+        _rotationX = Mathf.Clamp(_rotationX, -100f, 100f);
         _cameraTransform.localRotation = Quaternion.Euler(_rotationX, 0f, 0f);
     
         // WASD movement of player
