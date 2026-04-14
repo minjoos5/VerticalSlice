@@ -9,7 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _mouseSensitivity = 100f;
 
     private Transform _cameraTransform;
+
+    private Rigidbody _rb;
     private float _rotationX = 0f;
+
+    private Vector3 _playerMovement;
 
     void Start()
     {
@@ -18,6 +22,7 @@ public class Player : MonoBehaviour
         _cameraTransform = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _rb = this.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -36,20 +41,30 @@ public class Player : MonoBehaviour
         float _xInput = Input.GetAxis("Horizontal");
         float _zInput = Input.GetAxis("Vertical");
 
-        Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
-        transform.position += _playerMovement * _speed * Time.deltaTime;
+        //Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
+        //transform.position += _playerMovement * _speed * Time.deltaTime;
 
-        // Speed Up optoin for player
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.position += _playerMovement * _runSpeed * Time.deltaTime;
-        }
+        _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
+        playerMovement();
+        
         /*if (Player attacked by the npc)
         {
             shows game over UI
         }
         */
+    }
+
+    private void playerMovement()
+    {
+        Vector3 _movement = transform.TransformDirection(_playerMovement) * _speed;
+        _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
+            _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+        }
     }
 
 }
