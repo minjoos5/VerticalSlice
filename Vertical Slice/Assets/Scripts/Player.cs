@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         transform.Rotate(Vector3.up * _xMouse);
 
         _rotationX -= _yMouse;
-        _rotationX = Mathf.Clamp(_rotationX, -90f, 90f);
+        _rotationX = Mathf.Clamp(_rotationX, -60f, 60f);
         _cameraTransform.localRotation = Quaternion.Euler(_rotationX, 0f, 0f);
     
         // WASD movement of player
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
         transform.position += _playerMovement * _speed * Time.deltaTime;
 
+        // Speed Up optoin for player
         if (Input.GetKey(KeyCode.Space))
         {
             transform.position += _playerMovement * _runSpeed * Time.deltaTime;
