@@ -41,15 +41,15 @@ public class NPC : MonoBehaviour
 
     private void UpdateState()
     {
-        if (_distance > 30f)
+        if (_distance >= 5f)
         {
             _currentActivity = NPCstate.Walking;
         }
-        else if (_distance <= 20f)
+        else if (_distance <= 2f && _distance > 0.5f)
         {
             _currentActivity = NPCstate.Chasing;
         }
-        else if (_distance <= 7f)
+        else if (_distance <= 0.5f)
         {
             _currentActivity = NPCstate.Attacking;
         }
