@@ -19,8 +19,10 @@ public class NPC : MonoBehaviour
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
-    private NPCstate _currentActivity;
+    public NPCstate _currentActivity;
     private float _distance;
+
+    public bool _attack = false;
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -88,6 +90,7 @@ public class NPC : MonoBehaviour
     {
         agent.speed = 0.5f;
         Debug.Log ("Attacking now");
+        _attack = true;
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", true);
         _animator.SetBool("isWalking", false);

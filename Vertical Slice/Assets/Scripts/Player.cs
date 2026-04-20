@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _runSpeed = 10f;
     [SerializeField] private float _mouseSensitivity = 100f;
+
+    [SerializeField] private CapsuleCollider _collider;
 
     private Transform _cameraTransform;
 
@@ -47,12 +50,6 @@ public class Player : MonoBehaviour
         _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         playerMovement();
-        
-        /*if (Player attacked by the npc)
-        {
-            shows game over UI
-        }
-        */
     }
 
     private void playerMovement()
@@ -66,5 +63,14 @@ public class Player : MonoBehaviour
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
         }
     }
+
+    private void OnCollisionEnter (Collision collision)
+        {
+            NPC _npc = collision.gameObject.GetComponent<NPC>();
+            if (_npc._attack == true)
+            {
+                Locator.Instance._ui.GameOver();
+            }
+        }
 
 }
