@@ -8,6 +8,7 @@ TagManager:
   - Raycast
   - Item Manager
   - Item
+  - NPC
   layers:
   - Default
   - TransparentFX
