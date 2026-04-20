@@ -18,6 +18,5 @@ public class Items : MonoBehaviour
     {
         Debug.Log("clicked!!!!");
         gameObject.SetActive(false);
-        
     }
 }
