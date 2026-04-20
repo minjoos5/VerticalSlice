@@ -7,8 +7,4 @@ public class Cassette : Items
     [SerializeField] GameObject _fakeCas1;
     [SerializeField] GameObject _fakeCas2;
     [SerializeField] GameObject _trueCas;
-
-    
-
-
 }

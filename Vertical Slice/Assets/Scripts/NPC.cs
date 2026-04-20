@@ -14,6 +14,8 @@ public enum NPCstate
 public class NPC : MonoBehaviour
 {
     [SerializeField] private Transform target;
+
+    [SerializeField] private Animator _animator;
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
@@ -41,15 +43,15 @@ public class NPC : MonoBehaviour
 
     private void UpdateState()
     {
-        if (_distance >= 5f)
+        if (_distance >= 4f)
         {
             _currentActivity = NPCstate.Walking;
         }
-        else if (_distance <= 2f && _distance > 0.7f)
+        else if (_distance < 4f && _distance > 1f)
         {
             _currentActivity = NPCstate.Chasing;
         }
-        else if (_distance <= 0.7f)
+        else if (_distance <= 1f)
         {
             _currentActivity = NPCstate.Attacking;
         }
@@ -77,17 +79,26 @@ public class NPC : MonoBehaviour
     {
         agent.speed = 1.5f;
         Debug.Log ("Chasing now");
+        _animator.SetBool("isChasing", true);
+        _animator.SetBool("isAttacking", false);
+        _animator.SetBool("isWalking", false);
     }
 
     private void AttackAnimation()
     {
-        agent.speed = 2.0f;
+        agent.speed = 0.5f;
         Debug.Log ("Attacking now");
+        _animator.SetBool("isChasing", false);
+        _animator.SetBool("isAttacking", true);
+        _animator.SetBool("isWalking", false);
     }
     
     private void WalkAnimation()
     {
         agent.speed = 0.2f;
         Debug.Log ("Walking now");
+        _animator.SetBool("isChasing", false);
+        _animator.SetBool("isAttacking", false);
+        _animator.SetBool("isWalking", true);
     }
 }
