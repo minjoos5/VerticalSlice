@@ -45,11 +45,11 @@ public class NPC : MonoBehaviour
         {
             _currentActivity = NPCstate.Walking;
         }
-        else if (_distance <= 2f && _distance > 0.5f)
+        else if (_distance <= 2f && _distance > 0.7f)
         {
             _currentActivity = NPCstate.Chasing;
         }
-        else if (_distance <= 0.5f)
+        else if (_distance <= 0.7f)
         {
             _currentActivity = NPCstate.Attacking;
         }
@@ -75,19 +75,19 @@ public class NPC : MonoBehaviour
 
     private void ChaseAnimation()
     {
-        agent.speed = 2.0f;
+        agent.speed = 1.5f;
         Debug.Log ("Chasing now");
     }
 
     private void AttackAnimation()
     {
-        agent.speed = 3.0f;
+        agent.speed = 2.0f;
         Debug.Log ("Attacking now");
     }
     
     private void WalkAnimation()
     {
-        agent.speed = 0.5f;
+        agent.speed = 0.2f;
         Debug.Log ("Walking now");
     }
 }
