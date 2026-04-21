@@ -234,7 +234,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 656994462}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: GameOver
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -944,7 +944,7 @@ MonoBehaviour:
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 645139876}
   _currentActivity: 0
-  _attack: 0
+  _isAttacking: 0
 --- !u!54 &645139884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1432,11 +1432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1b00ca885995949b21f3c151a05c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _items: {fileID: 0}
-  _NPC: {fileID: 0}
+  _player: {fileID: 530091453}
+  _items: {fileID: 1898233268}
+  _NPC: {fileID: 645139883}
   _clicked: {fileID: 0}
-  _ui: {fileID: 0}
+  _ui: {fileID: 656994462}
 --- !u!4 &1022283567
 Transform:
   m_ObjectHideFlags: 0
@@ -2409,7 +2409,7 @@ MonoBehaviour:
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 2053236688}
   _currentActivity: 0
-  _attack: 0
+  _isAttacking: 0
 --- !u!1 &2100567894
 GameObject:
   m_ObjectHideFlags: 0

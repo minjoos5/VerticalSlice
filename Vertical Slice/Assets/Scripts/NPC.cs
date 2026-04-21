@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour
     public NPCstate _currentActivity;
     private float _distance;
 
-    public bool _attack = false;
+    public bool _isAttacking = false;
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -40,7 +40,7 @@ public class NPC : MonoBehaviour
     private void CalculateDistance()
     {
         _distance = Vector3.Distance(_playerPos.transform.position, _NPCPos.transform.position);
-        Debug.Log(_distance);
+        //Debug.Log(_distance);
     }
 
     private void UpdateState()
@@ -80,28 +80,30 @@ public class NPC : MonoBehaviour
     private void ChaseAnimation()
     {
         agent.speed = 1.5f;
-        Debug.Log ("Chasing now");
+        //Debug.Log ("Chasing now");
         _animator.SetBool("isChasing", true);
         _animator.SetBool("isAttacking", false);
         _animator.SetBool("isWalking", false);
+        _isAttacking = false;
     }
 
     private void AttackAnimation()
     {
         agent.speed = 0.5f;
-        Debug.Log ("Attacking now");
-        _attack = true;
+        //Debug.Log ("Attacking now");
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", true);
         _animator.SetBool("isWalking", false);
+        _isAttacking = true;
     }
     
     private void WalkAnimation()
     {
         agent.speed = 0.2f;
-        Debug.Log ("Walking now");
+        //Debug.Log ("Walking now");
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", false);
         _animator.SetBool("isWalking", true);
+        _isAttacking = false;
     }
 }
