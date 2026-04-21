@@ -16,7 +16,12 @@ public class Items : MonoBehaviour
     
     public void OnMouseDown()
     {
-        Debug.Log("clicked!!!!");
+        Debug.Log("clicked!");
         gameObject.SetActive(false);
+    }
+
+    public void Interaction()
+    {
+        
     }
 }
