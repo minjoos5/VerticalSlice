@@ -64,13 +64,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter (Collision collision)
+    private void OnCollisionEnter (Collision collision)
         {
             NPC _npc = collision.gameObject.GetComponent<NPC>();
             if (_npc != null  && Locator.Instance._NPC._isAttacking == true)
             {
                 Locator.Instance._ui.GameOver();
             }
-        }*/
+        }
 
 }
