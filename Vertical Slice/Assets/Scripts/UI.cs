@@ -7,10 +7,15 @@ public class UI : MonoBehaviour
 {
     
     [SerializeField] GameObject _gameover;
-    
+
+    [SerializeField] GameObject _map;
+
+    [SerializeField] GameObject _message;
     void Awake()
     {
         _gameover.SetActive(false);
+        _message.SetActive(false);
+        _map.SetActive(false);
     }
     public void GameOver()
     {
@@ -19,6 +24,16 @@ public class UI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Debug.Log("Game Over");
+    }
+
+    public void MapDisplay()
+    {
+        _map.SetActive(true);
+    }
+
+    public void MessageDisplay()
+    {
+        _message.SetActive(true);
     }
 
     public void Restart()
