@@ -23,7 +23,8 @@ public class Locator : MonoBehaviour
     public Items _items;
     public NPC _NPC;
     public ClickRaycast _clicked;
-
     public UI _ui;
+
+    public Cassette _cassette;
     
 }

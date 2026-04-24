@@ -8,9 +8,14 @@ public class Items : MonoBehaviour
     // the item disappears when the player picks it up
     // maybe interactable with E key?
     // space to run
+
+    [SerializeField] List <GameObject> _location = new List <GameObject> {};
     void Start()
     {
-        
+        foreach (GameObject _spot in _location)
+        {
+            _spot.SetActive(true);
+        }
     }
 
     
