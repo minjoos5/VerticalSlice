@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Cassette : Items
 {
-    [SerializeField] GameObject _cassetteItself;
 
     private bool _isTrueCassette;
 
@@ -16,6 +15,11 @@ public class Cassette : Items
     {
         _gotRightOne = false;
         _isTrueCassette = false;
+    }
+
+    void Start()
+    {
+        gameObject.SetActive(true);
     }
 
     override public void OnMouseDown()

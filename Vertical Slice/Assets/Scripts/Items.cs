@@ -8,7 +8,7 @@ interface Interactable
 {
     public void Interact();
 }
-public class Items : MonoBehaviour
+public abstract class Items : MonoBehaviour
 {
     // the list of items: key, cassette tape, cassette tape;
     // the item disappears when the player picks it up
@@ -16,14 +16,17 @@ public class Items : MonoBehaviour
     // space to run
     [SerializeField] List <GameObject> _location = new List <GameObject> {};
     [SerializeField] List <GameObject> _items = new List <GameObject> {};
-    [SerializeField] Transform _playerTransform;
+    //[SerializeField] 
+    public Transform _playerTransform;
     [SerializeField] GameObject _cassPrefab;
-    private List <GameObject> _temp = new List <GameObject> {};
+    public List <GameObject> _temp = new List <GameObject> {};
 
     public float _interact;
 
-    void Start()
+    void Awake()
     {
+        _playerTransform = GameObject.Find("Player Capsule").transform;
+        
         CassettePrefab();
 
         foreach (GameObject _spot in _location)
@@ -40,11 +43,16 @@ public class Items : MonoBehaviour
         for (int i = 0; i < _location.Count; i++)
         {
             _items[i].transform.position = _temp[i].transform.position;
-            _items[i].SetActive(true);
+            //_items[i].SetActive(true);
         }
     }
 
-    public virtual void Update()
+    public void Update()
+    {
+        InheritUpdate();
+    }
+
+    public virtual void InheritUpdate()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -62,7 +70,7 @@ public class Items : MonoBehaviour
     public void InteractionE()
     {
         Ray _ray = new Ray (_playerTransform.position, _playerTransform.forward);
-        if (Physics.Raycast(_ray, out RaycastHit _hit, _interact) && gameObject.tag == "Item")
+        if (Physics.Raycast(_ray, out RaycastHit _hit, _interact) && gameObject.CompareTag("Item"))
         {
             if (_hit.collider.gameObject.TryGetComponent(out Interactable _targetObj))
             {
