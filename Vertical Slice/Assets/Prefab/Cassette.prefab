@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72f2217aea00974d9199e79a7cfdbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cassette: {fileID: 7688566829362078199}
-  _cass:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _location: []
+  _items: []
+  _playerTransform: {fileID: 0}
+  _cassPrefab: {fileID: 7688566829362078199}
+  _interact: 0
+  isTrueCass: 0
+  _cassetteItself: {fileID: 0}

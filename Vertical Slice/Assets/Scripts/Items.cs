@@ -24,15 +24,10 @@ public class Items : MonoBehaviour
 
     public float _interact;
 
-    public bool isTrueCass;
-
-
-    void Awake()
-    {
-        CassettePrefab();
-    }
     void Start()
     {
+        CassettePrefab();
+
         foreach (GameObject _spot in _location)
         {
             _spot.SetActive(true);
@@ -51,18 +46,16 @@ public class Items : MonoBehaviour
         }
     }
 
-    public void Update()
+    public virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             InteractionE();
             Debug.Log("interacting now");
         }
-
-
     }
 
-    public void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         Debug.Log("clicked!");
         gameObject.SetActive(false);

@@ -26,5 +26,7 @@ public class Locator : MonoBehaviour
     public UI _ui;
 
     public Cassette _cassette;
+
+    public CassettePlayer _cassPl;
     
 }
