@@ -8,15 +8,26 @@ public class Cassette : Items
 
     private bool _isTrueCassette;
 
-    private bool _gotRightOne = false;
+    private static bool _gotRightOne = false;
 
     int r = 0;
+
+    void Awake()
+    {
+        _gotRightOne = false;
+        _isTrueCassette = false;
+    }
 
     override public void OnMouseDown()
     {
         base.OnMouseDown();
 
-        if (_gotRightOne == false)
+        if (_gotRightOne == true)
+        {
+            _isTrueCassette = false;
+            Debug.Log("fake tape");
+        }
+        else if (_gotRightOne == false)
         {
             r = Random.Range(0,2);
             if (r == 0)
@@ -24,16 +35,12 @@ public class Cassette : Items
                 _isTrueCassette = false;
                 Debug.Log("fake tape");
             }
-            else
+            else if (r == 1)
             {
                 _gotRightOne = true;
                 _isTrueCassette = true;
                 Debug.Log("true tape");
             }
-        }
-        else if (_gotRightOne == true && _isTrueCassette == false)
-        {
-            Debug.Log("fake tape");
         }
     }
 }

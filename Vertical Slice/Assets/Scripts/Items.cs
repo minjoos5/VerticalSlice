@@ -17,9 +17,7 @@ public class Items : MonoBehaviour
     [SerializeField] List <GameObject> _location = new List <GameObject> {};
     [SerializeField] List <GameObject> _items = new List <GameObject> {};
     [SerializeField] Transform _playerTransform;
-
     [SerializeField] GameObject _cassPrefab;
-
     private List <GameObject> _temp = new List <GameObject> {};
 
     public float _interact;
