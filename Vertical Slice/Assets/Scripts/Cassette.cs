@@ -5,9 +5,9 @@ using UnityEngine;
 public class Cassette : Items
 {
 
-    private bool _isTrueCassette;
+    public bool _isTrueCassette;
 
-    private static bool _gotRightOne = false;
+    public static bool _gotRightOne = false;
 
     int r = 0;
 
@@ -20,6 +20,15 @@ public class Cassette : Items
     void Start()
     {
         gameObject.SetActive(true);
+    }
+
+    public override void InheritUpdate()
+    {
+        base.InheritUpdate();
+        if (Locator.Instance._ui._checkMessage == true)
+        {
+            gameObject.SetActive(true);
+        }
     }
 
     override public void OnMouseDown()
