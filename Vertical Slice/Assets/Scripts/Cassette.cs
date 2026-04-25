@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Cassette : Items
 {
-    [SerializeField] GameObject _cassette;
+
 }

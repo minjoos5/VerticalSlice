@@ -15,17 +15,23 @@ public class Items : MonoBehaviour
     // maybe interactable with E key?
     // space to run
     [SerializeField] List <GameObject> _location = new List <GameObject> {};
-
     [SerializeField] List <GameObject> _items = new List <GameObject> {};
     [SerializeField] Transform _playerTransform;
-    
+
+    [SerializeField] GameObject _cassPrefab;
+
     private List <GameObject> _temp = new List <GameObject> {};
 
     public float _interact;
 
+    public bool isTrueCass;
 
 
     void Awake()
+    {
+        CassettePrefab();
+    }
+    void Start()
     {
         foreach (GameObject _spot in _location)
         {
@@ -37,10 +43,6 @@ public class Items : MonoBehaviour
             _spot.SetActive(false);
         }
 
-
-    }
-    void Start()
-    {
         _temp = _location.OrderBy( x => Random.value ).ToList( );
         for (int i = 0; i < _location.Count; i++)
         {
@@ -66,8 +68,6 @@ public class Items : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    
-    
     public void InteractionE()
     {
         Ray _ray = new Ray (_playerTransform.position, _playerTransform.forward);
@@ -78,5 +78,16 @@ public class Items : MonoBehaviour
                     _targetObj.Interact();
             }
         }
+    }
+
+    void CassettePrefab()
+    {
+        for (int p = 0; p < 3; p++)
+        {
+            GameObject _threeCass = Instantiate(_cassPrefab, new Vector3(0,0,0), Quaternion.identity);
+            _items.Add(_threeCass);
+        }
+
+        int r = Random.Range(0, 3);
     }
 }
