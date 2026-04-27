@@ -57,7 +57,6 @@ public class Items : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             InteractionE();
-            Debug.Log("interacting now");
         }
     }
 
@@ -70,11 +69,12 @@ public class Items : MonoBehaviour
     public void InteractionE()
     {
         Ray _ray = new Ray (_playerTransform.position, _playerTransform.forward);
-        if (Physics.Raycast(_ray, out RaycastHit _hit, _interact) && gameObject.CompareTag("Item"))
+        if (Physics.Raycast(_ray, out RaycastHit _hit, _interact) && _hit.collider.gameObject.CompareTag("Item"))
         {
             if (_hit.collider.gameObject.TryGetComponent(out Interactable _targetObj))
             {
-                    _targetObj.Interact();
+                _targetObj.Interact();
+                Debug.Log("interacting now");
             }
         }
     }

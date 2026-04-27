@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class Door : Items
 {
+    public void SpawnDoor()
+    {
+        Debug.Log("Door is here!");
+        if (Locator.Instance._key._gotKey == true)
+        {
+            Debug.Log("the door is spawned");
+            gameObject.SetActive(true);
+        }
 
+    }
 }

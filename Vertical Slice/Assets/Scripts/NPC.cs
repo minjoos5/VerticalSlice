@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
     private float _distance;
 
     public bool _isAttacking = false;
-    private void Start()
+    public void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
@@ -34,16 +34,16 @@ public class NPC : MonoBehaviour
         agent.SetDestination(target.position);
         CalculateDistance();
         UpdateState();
-        UpdateAnimation();
+        //UpdateAnimation();
     }
 
-    private void CalculateDistance()
+    public void CalculateDistance()
     {
         _distance = Vector3.Distance(_playerPos.transform.position, _NPCPos.transform.position);
         //Debug.Log(_distance);
     }
 
-    private void UpdateState()
+    public void UpdateState()
     {
         if (_distance >= 4f)
         {
@@ -59,7 +59,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    private void UpdateAnimation()
+    /*public void UpdateAnimation()
     {
         switch (_currentActivity)
         {
@@ -75,9 +75,9 @@ public class NPC : MonoBehaviour
             WalkAnimation();
             break;
         }
-    }
+    }*/
 
-    private void ChaseAnimation()
+    public void ChaseAnimation()
     {
         agent.speed = 1.5f;
         //Debug.Log ("Chasing now");
@@ -86,8 +86,9 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", false);
         _isAttacking = false;
     }
+    // declared in graph
 
-    private void AttackAnimation()
+    public void AttackAnimation()
     {
         agent.speed = 0.5f;
         //Debug.Log ("Attacking now");
@@ -96,8 +97,9 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", false);
         _isAttacking = true;
     }
+    // declared in graph
     
-    private void WalkAnimation()
+    public void WalkAnimation()
     {
         agent.speed = 0.2f;
         //Debug.Log ("Walking now");
@@ -106,4 +108,5 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", true);
         _isAttacking = false;
     }
+    // declared in graph
 }

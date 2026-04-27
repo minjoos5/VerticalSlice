@@ -15,6 +15,6 @@ public class Key : MonoBehaviour
         gameObject.SetActive(false);
         _gotKey = true;
         Debug.Log("Got Key");
-
+        Locator.Instance._door.SpawnDoor();
     }
 }
