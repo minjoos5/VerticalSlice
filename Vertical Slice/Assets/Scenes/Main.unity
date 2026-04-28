@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794740961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8e25836c17ccf14aba04c69ea02f0c2, type: 3}
   m_Name: 
@@ -7912,7 +7912,7 @@ MonoBehaviour:
   _location: []
   _items: []
   _playerTransform: {fileID: 530091452}
-  _camera: {fileID: 0}
+  _camera: {fileID: 1480751161}
   _cassPrefab: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
     type: 3}
   _temp: []
