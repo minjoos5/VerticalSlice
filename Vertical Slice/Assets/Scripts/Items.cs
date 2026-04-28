@@ -4,10 +4,10 @@ using UnityEngine;
 using System.Linq;
 
 
-interface Interactable
+/*interface Interactable
 {
     public void Interact();
-}
+}*/
 public class Items : MonoBehaviour
 {
     // the list of items: key, cassette tape, cassette tape;
@@ -18,10 +18,11 @@ public class Items : MonoBehaviour
     [SerializeField] List <GameObject> _items = new List <GameObject> {};
     //[SerializeField] 
     public Transform _playerTransform;
+    public Camera _camera;
     [SerializeField] GameObject _cassPrefab;
     public List <GameObject> _temp = new List <GameObject> {};
 
-    public float _interact;
+    public float _interact = 10.0f;
 
     void Awake()
     {
@@ -68,15 +69,29 @@ public class Items : MonoBehaviour
 
     public void InteractionE()
     {
-        Ray _ray = new Ray (_playerTransform.position, _playerTransform.forward);
-        if (Physics.Raycast(_ray, out RaycastHit _hit, _interact) && _hit.collider.gameObject.CompareTag("Item"))
+        RaycastHit _hit;
+        Ray _ray = _camera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("Item"))
         {
+            Transform objectHit = _hit.transform;
+            gameObject.SetActive(false);
+            //Debug.Log(_hit.collider.name);
+            Debug.Log("itworksfinalllyyylylylyly");
+        }
+
+        /*Ray _ray = _camera.ViewportPointToRay(Input.mousePosition);
+        RaycastHit _hit;
+
+        if (Physics.Raycast(_ray, out _hit, _interact)) /*&& _hit.collider.gameObject.CompareTag("Item")
+        {
+            Debug.Log("check for ray");
             if (_hit.collider.gameObject.TryGetComponent(out Interactable _targetObj))
             {
                 _targetObj.Interact();
                 Debug.Log("interacting now");
             }
-        }
+        }*/
     }
 
     void CassettePrefab()

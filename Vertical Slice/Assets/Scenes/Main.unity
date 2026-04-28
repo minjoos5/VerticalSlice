@@ -2473,6 +2473,7 @@ MonoBehaviour:
   _location: []
   _items: []
   _playerTransform: {fileID: 530091452}
+  _camera: {fileID: 0}
   _cassPrefab: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
     type: 3}
   _temp: []
@@ -4295,6 +4296,7 @@ MonoBehaviour:
   _location: []
   _items: []
   _playerTransform: {fileID: 530091452}
+  _camera: {fileID: 0}
   _cassPrefab: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
     type: 3}
   _temp: []
@@ -4456,6 +4458,7 @@ MonoBehaviour:
   - {fileID: 1207668473}
   - {fileID: 1688551532}
   _playerTransform: {fileID: 530091452}
+  _camera: {fileID: 1480751161}
   _cassPrefab: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
     type: 3}
   _temp: []
@@ -5092,7 +5095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49800003, y: 0.49666667}
   m_AnchorMax: {x: 0.50200003, y: 0.50333333}
-  m_AnchoredPosition: {x: 0.00000011920929, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.00000017881429, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100567896
@@ -7909,6 +7912,7 @@ MonoBehaviour:
   _location: []
   _items: []
   _playerTransform: {fileID: 530091452}
+  _camera: {fileID: 0}
   _cassPrefab: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
     type: 3}
   _temp: []
