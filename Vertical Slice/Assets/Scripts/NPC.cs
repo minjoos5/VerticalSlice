@@ -20,20 +20,20 @@ public class NPC : MonoBehaviour
     public GameObject _NPCPos;
     private NavMeshAgent agent;
     public NPCstate _currentActivity;
-    private float _distance;
+    public float _distance;
 
     public bool _isAttacking = false;
     public void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.position);
-        CalculateDistance();
-        UpdateState();
+        //CalculateDistance();
+        //UpdateState();
         //UpdateAnimation();
     }
 
@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
         //Debug.Log(_distance);
     }
 
-    public void UpdateState()
+    /*public void UpdateState()
     {
         if (_distance >= 4f)
         {
@@ -57,7 +57,7 @@ public class NPC : MonoBehaviour
         {
             _currentActivity = NPCstate.Attacking;
         }
-    }
+    }*/
 
     /*public void UpdateAnimation()
     {
