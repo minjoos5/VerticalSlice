@@ -25,10 +25,6 @@ public class Cassette : Items
     public override void InheritUpdate()
     {
         base.InheritUpdate();
-        if (Locator.Instance._ui._checkMessage == true)
-        {
-            gameObject.SetActive(true);
-        }
     }
 
     override public void OnMouseDown()

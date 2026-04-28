@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+using Unity.VisualScripting;
 
 public enum NPCstate
     {
@@ -16,16 +17,21 @@ public class NPC : MonoBehaviour
     [SerializeField] private Transform target;
 
     [SerializeField] private Animator _animator;
+
+    [SerializeField] public GameObject _message;
+
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
     public NPCstate _currentActivity;
     public float _distance;
-
     public bool _isAttacking = false;
+
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame

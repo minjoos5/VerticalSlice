@@ -34,5 +34,7 @@ public class Locator : MonoBehaviour
     public Knife _knife;
 
     public Key _key;
+
+    public Message _message;
     
 }

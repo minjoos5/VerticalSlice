@@ -9,6 +9,7 @@ TagManager:
   - Item Manager
   - Item
   - NPC
+  - InteractableItem
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : Items
 {
+    public bool _readyToEscape = false;
     public void SpawnDoor()
     {
         Debug.Log("Door is here!");
@@ -11,7 +12,8 @@ public class Door : Items
         {
             Debug.Log("the door is spawned");
             gameObject.SetActive(true);
+            _readyToEscape = true;
         }
-
     }
+
 }

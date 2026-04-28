@@ -12,12 +12,15 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject _message;
 
+    [SerializeField] public GameObject _EToInteract;
+
     public bool _checkMessage = false;
     void Awake()
     {
         _gameover.SetActive(false);
         _message.SetActive(false);
         _map.SetActive(false);
+        _EToInteract.SetActive(false);
         _checkMessage = false;
     }
     public void GameOver()
@@ -38,6 +41,11 @@ public class UI : MonoBehaviour
     {
         _message.SetActive(true);
         _checkMessage = true;
+    }
+
+    public void EInteractDisplay()
+    {
+        _EToInteract.SetActive(true);
     }
 
     public void Restart()
