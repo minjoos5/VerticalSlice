@@ -2,6 +2,8 @@
 ## Milestone 1 Devlog
 ### Answer 1:
 Visual script graph: Message
+
+
 This scripting graph is connected to the message game object, which is the first item the player encounters. It lets the player know what they have to do first. The main functions of the message are:
 - The player can pick up the message by clicking on it.
 - If the player clicks it, the UI will show up.
