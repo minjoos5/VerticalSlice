@@ -79,7 +79,8 @@ public class NPC : MonoBehaviour
 
     public void ChaseAnimation()
     {
-        agent.speed = 1.5f;
+        //agent.speed = 1.5f;
+        agent.speed = 0.5f;
         //Debug.Log ("Chasing now");
         _animator.SetBool("isChasing", true);
         _animator.SetBool("isAttacking", false);
@@ -90,7 +91,8 @@ public class NPC : MonoBehaviour
 
     public void AttackAnimation()
     {
-        agent.speed = 0.5f;
+        //agent.speed = 0.5f;
+        agent.speed = 1.0f;
         //Debug.Log ("Attacking now");
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", true);
@@ -101,7 +103,8 @@ public class NPC : MonoBehaviour
     
     public void WalkAnimation()
     {
-        agent.speed = 0.2f;
+        //agent.speed = 0.2f;
+        agent.speed = 0.05f;
         //Debug.Log ("Walking now");
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", false);
