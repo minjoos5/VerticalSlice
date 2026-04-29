@@ -2,10 +2,9 @@
 ## Milestone 1 Devlog
 ### Complicating Factors
 - One random tape to escape
-- Knife to attack
 - Player’s stamina
 
-These factors will be implemented for the next milestone or assignment. They were excluded because of their complicating features. For now, players cannot use a knife to attack, and it won’t appear in the game. If the player picks any of the three cassette tapes, the cassette player will display the map. Press E to interact with the tape and Q to close the map window. There’s no stamina limit now, so players will be able to run freely. Press the space bar to run.
+These factors will be implemented for the next milestone or assignment. They were excluded because of their complicating features. If the player picks any of the three cassette tapes, the cassette player will display the map. Press E to interact with the tape and Q to close the map window. There’s no stamina limit now, so players will be able to run freely. Press the space bar to run.
 
 
 ### Answer 1:
