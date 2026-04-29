@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _runSpeed: 7
-  _mouseSensitivity: 400
+  _mouseSensitivity: 200
   _collider: {fileID: 530091449}
 --- !u!1 &533054568
 GameObject:
