@@ -9,7 +9,8 @@ TagManager:
   - Item Manager
   - Item
   - NPC
-  - InteractableItem
+  - CassettePlayer
+  - Door
   layers:
   - Default
   - TransparentFX

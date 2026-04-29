@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class CassettePlayer : Items
 {
-    
+    public override void OnMouseDown()
+    {
+        Debug.Log("cannot click");
+    }
 }

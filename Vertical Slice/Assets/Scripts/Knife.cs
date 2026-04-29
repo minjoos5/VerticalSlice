@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Knife : Items
 {
-
+    void Start()
+    {
+        gameObject.SetActive(false);
+    }
 }

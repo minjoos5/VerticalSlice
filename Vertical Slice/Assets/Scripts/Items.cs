@@ -43,6 +43,7 @@ public class Items : MonoBehaviour
         }
     }
 
+
     public void Update()
     {
         InheritUpdate();
@@ -50,7 +51,8 @@ public class Items : MonoBehaviour
 
     public virtual void InheritUpdate()
     {
-        Locator.Instance._clicked.InteractionE();
+        Locator.Instance._clicked.InteractionE_Cassette();
+        Locator.Instance._clicked.InteractionE_Door();
     }
 
     public virtual void OnMouseDown()

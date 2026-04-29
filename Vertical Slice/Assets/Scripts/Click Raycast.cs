@@ -10,7 +10,48 @@ public class ClickRaycast : MonoBehaviour
 
     public bool _itemDetected = false;
 
-    public virtual void InteractionE()
+    public void InteractionE_Cassette()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
+        {
+            Transform objectHit = _hit.transform;
+            //Locator.Instance._ui._EToInteract.SetActive(true);
+            _itemDetected = true;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Locator.Instance._ui.MapDisplay();
+                //Locator.Instance._ui._EToInteract.SetActive(false);
+            }
+        }
+    }
+
+    public void InteractionE_Door()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("Door"))
+        {
+            Transform objectHit = _hit.transform;
+            //Locator.Instance._ui._EToInteract.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //Debug.Log("hit E on " + gameObject.name);
+                //Locator.Instance._ui._EToInteract.SetActive(false);
+                //Locator.Instance._ui.
+                Locator.Instance._door.Escape();
+            }
+            
+            
+        }
+    }
+
+    /*public virtual void InteractionE()
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -45,6 +86,6 @@ public class ClickRaycast : MonoBehaviour
                 _targetObj.Interact();
                 Debug.Log("interacting now");
             }
-        }*/
-    }
+        }
+    }*/
 }
