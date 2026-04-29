@@ -41,7 +41,12 @@ Final Devlog goes here.
 ## Open-source assets
 
 [Backroom asset](https://sketchfab.com/3d-models/backrooms-1da6a7f2e0294ba9a4123f61244811a8)
+
+
 [NPC Model](https://www.mixamo.com/#/?page=1&query=run&type=Motion%2CMotionPack)
+- [Walk](https://www.mixamo.com/#/?page=1&query=walk&type=Motion%2CMotionPack)
+- [Chase](https://www.mixamo.com/#/?page=1&query=fast+run&type=Motion%2CMotionPack)
+- [Attack](https://www.mixamo.com/#/?page=1&query=stabbing&type=Motion%2CMotionPack)
 
 Game items:
 - [Cassette tape](https://sketchfab.com/3d-models/video-casette-c2069ccf3f4247b28c843e480da3118e)
