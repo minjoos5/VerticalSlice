@@ -53,6 +53,7 @@ public class Items : MonoBehaviour
     {
         Locator.Instance._clicked.InteractionE_Cassette();
         Locator.Instance._clicked.InteractionE_Door();
+        Locator.Instance._clicked.InteractionE_Knife();
     }
 
     public virtual void OnMouseDown()

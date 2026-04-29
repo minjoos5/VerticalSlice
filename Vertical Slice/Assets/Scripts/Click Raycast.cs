@@ -51,6 +51,23 @@ public class ClickRaycast : MonoBehaviour
         }
     }
 
+    public void InteractionE_Knife()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 10f) && _hit.collider.gameObject.CompareTag("NPC"))
+        {
+            Transform objectHit = _hit.transform;
+            //Locator.Instance._ui._EToInteract.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Locator.Instance._knife.AttackwKnife();
+            }
+        }
+    }
+
     /*public virtual void InteractionE()
     {
         RaycastHit _hit;
