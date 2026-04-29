@@ -27,11 +27,16 @@ public class NPC : MonoBehaviour
     public float _distance;
     public bool _isAttacking = false;
 
-    public void Start()
+    public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
+    }
+
+    public void Start()
+    {
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
