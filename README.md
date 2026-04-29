@@ -2,10 +2,9 @@
 ## Milestone 1 Devlog
 ### Complicating Factors
 - One random tape to escape
-- Knife to attack
 - Player’s stamina
 
-These factors will be implemented for the next milestone or assignment. They were excluded because of their complicating features. For now, players cannot use a knife to attack, and it won’t appear in the game. If the player picks any of the three cassette tapes, the cassette player will display the map. Press E to interact with the tape and Q to close the map window. There’s no stamina limit now, so players will be able to run freely. Press the space bar to run.
+These factors will be implemented for the next milestone or assignment. They were excluded because of their complicating features. If the player picks any of the three cassette tapes, the cassette player will display the map. Press E to interact with the tape and Q to close the map window. There’s no stamina limit now, so players will be able to run freely. Press the space bar to run.
 
 
 ### Answer 1:
@@ -40,4 +39,21 @@ Milestone 4 Devlog goes here.
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
-- Cite any external assets used here!
+
+[Backroom asset](https://sketchfab.com/3d-models/backrooms-1da6a7f2e0294ba9a4123f61244811a8)
+
+
+[NPC Model](https://www.mixamo.com/#/?page=1&query=run&type=Motion%2CMotionPack)
+- [Walk](https://www.mixamo.com/#/?page=1&query=walk&type=Motion%2CMotionPack)
+- [Chase](https://www.mixamo.com/#/?page=1&query=fast+run&type=Motion%2CMotionPack)
+- [Attack](https://www.mixamo.com/#/?page=1&query=stabbing&type=Motion%2CMotionPack)
+
+Game items:
+- [Cassette tape](https://sketchfab.com/3d-models/video-casette-c2069ccf3f4247b28c843e480da3118e)
+- [Tape Player](https://sketchfab.com/3d-models/cassette-player-57f556902cf940699103696f1d95a19b)
+- [Door](https://sketchfab.com/3d-models/door-wooden-old-9mb-77815b3a55504037aa4641eb9650e9de)
+- [Key](https://sketchfab.com/3d-models/door-key-6c692bbf57364804a68d4a6477e788fa#download)
+- [Knife](https://sketchfab.com/3d-models/utility-knife-b56f12426f9d42b6bbbd35726ddd69a3)
+
+SFX
+- [Attack SFX](https://pixabay.com/sound-effects/film-special-effects-attack-sound-3-384911/)
