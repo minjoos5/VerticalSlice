@@ -20,6 +20,9 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public GameObject _message;
 
+    [SerializeField] public GameObject _head;
+
+    [SerializeField] public AudioSource _warning;
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
@@ -43,6 +46,7 @@ public class NPC : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
+        SightDetection();
         //CalculateDistance();
         //UpdateState();
         //UpdateAnimation();
@@ -52,6 +56,30 @@ public class NPC : MonoBehaviour
     {
         _distance = Vector3.Distance(_playerPos.transform.position, _NPCPos.transform.position);
         //Debug.Log(_distance);
+    }
+
+    public void SightDetection()
+    {
+        Transform _headPos = _head.transform;
+        
+        RaycastHit _hit;
+
+        if (Physics.Raycast(_headPos.position, transform.TransformDirection(Vector3.forward), out _hit, 10f))
+        {
+            Transform objectHit = _hit.transform;
+            Debug.DrawRay(_headPos.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.yellow);
+
+            if (_hit.collider.gameObject.CompareTag("Player") && _warning.isPlaying == false)
+            {
+                _warning.Play();
+                Debug.Log("Sound is playing");
+            }
+            else
+            {
+                //_warning.Stop();
+            }
+            
+        }
     }
 
     /*public void UpdateState()
