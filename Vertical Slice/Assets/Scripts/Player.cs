@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public float _maxStamina = 15f;
     public float _minStamina = 0.1f;
 
-    float xPos = Mathf.Clamp(xValue, xMin, xMax);
+    
 
     void Start()
     {
@@ -39,7 +39,9 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _rb = this.GetComponent<Rigidbody>();
+
     }
+        
 
     void Update()
     {
@@ -71,6 +73,8 @@ public class Player : MonoBehaviour
     {
         Locator.Instance._stamina.UIupdate(_staminaBase, _maxStamina);
         Vector3 _movement;
+        _staminaBase = Mathf.Clamp(_staminaBase, _minStamina, _maxStamina);
+        
         //_rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
         if (Input.GetKey(KeyCode.Space) && _staminaBase > _minStamina)
