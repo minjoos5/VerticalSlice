@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public float _staminaIncrease = 2f;
 
-    public float _staminaBase = 10f;
+    public float _staminaBase = 15f;
 
     void Start()
     {
@@ -57,12 +57,13 @@ public class Player : MonoBehaviour
 
         _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-        isExhausted();
+        isExhausted(_staminaBase);
         playerMovement();
     }
 
     private void playerMovement()
     {
+        Locator.Instance._stamina.UIupdate(_staminaBase);
         Vector3 _movement = transform.TransformDirection(_playerMovement) * _speed;
         _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
@@ -71,26 +72,30 @@ public class Player : MonoBehaviour
             if (_noEnergy == false)
             {
                 _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
-                _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
                 _staminaBase -= _staminaDecrease * Time.deltaTime;
+            }
+            else
+            {
+                _movement = transform.TransformDirection(_playerMovement) * _speed;
+                _staminaBase += _staminaIncrease * Time.deltaTime;
             }
         }
         else
         {
-            if (_staminaBase < 10f)
+            if (_staminaBase < 15f)
             {
                 _staminaBase += _staminaIncrease * Time.deltaTime;
             }
         }
     }
 
-    private void isExhausted ()
+    private void isExhausted (float _currentStamina)
     {
-        if (_staminaBase == 0)
+        if (_currentStamina == 0)
         {
             _noEnergy = true;
         }
-        else if (_staminaBase > 0)
+        else if (_currentStamina > 0)
         {
             _noEnergy = false;
         }

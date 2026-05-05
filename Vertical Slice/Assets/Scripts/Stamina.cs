@@ -6,10 +6,6 @@ using UnityEngine.UI;
 public class Stamina : MonoBehaviour
 {
     [SerializeField] public Slider _staminaSlider;
-    void Update()
-    {
-        
-    }
 
     public void UIupdate (float _currentStamina)
     {
