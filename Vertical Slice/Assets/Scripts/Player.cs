@@ -18,6 +18,14 @@ public class Player : MonoBehaviour
 
     private Vector3 _playerMovement;
 
+    public bool _noEnergy;
+
+    public float _staminaDecrease = 5f;
+
+    public float _staminaIncrease = 2f;
+
+    public float _staminaBase = 10f;
+
     void Start()
     {
         // freeze the cursor in the middle of the screen and hide it
@@ -49,6 +57,7 @@ public class Player : MonoBehaviour
 
         _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
+        isExhausted();
         playerMovement();
     }
 
@@ -59,10 +68,45 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
+            if (_noEnergy == false)
+            {
+                _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
+                _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+                _staminaBase -= _staminaDecrease * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (_staminaBase < 10f)
+            {
+                _staminaBase += _staminaIncrease * Time.deltaTime;
+            }
+        }
+    }
+
+    private void isExhausted ()
+    {
+        if (_staminaBase == 0)
+        {
+            _noEnergy = true;
+        }
+        else if (_staminaBase > 0)
+        {
+            _noEnergy = false;
+        }
+    }
+
+    /*private void playerMovement()
+    {
+        Vector3 _movement = transform.TransformDirection(_playerMovement) * _speed;
+        _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
         }
-    }
+    }*/
 
     private void OnCollisionEnter (Collision collision)
     {

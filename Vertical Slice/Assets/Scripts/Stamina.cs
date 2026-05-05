@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stamina : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public Slider _staminaSlider;
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UIupdate (float _currentStamina)
     {
-        
+        _staminaSlider.value = _currentStamina;
     }
 }
