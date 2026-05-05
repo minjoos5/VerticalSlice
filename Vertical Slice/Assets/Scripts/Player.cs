@@ -57,39 +57,31 @@ public class Player : MonoBehaviour
 
         _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-        isExhausted(_staminaBase);
+        //isExhausted(_staminaBase);
         playerMovement();
     }
 
     private void playerMovement()
     {
         Locator.Instance._stamina.UIupdate(_staminaBase);
-        Vector3 _movement = transform.TransformDirection(_playerMovement) * _speed;
-        _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+        Vector3 _movement;
+        //_rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && _staminaBase != 0)
         {
-            if (_noEnergy == false)
-            {
-                _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
-                _staminaBase -= _staminaDecrease * Time.deltaTime;
-            }
-            else
-            {
-                _movement = transform.TransformDirection(_playerMovement) * _speed;
-                _staminaBase += _staminaIncrease * Time.deltaTime;
-            }
+            _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
+            _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+            _staminaBase -= _staminaDecrease * Time.deltaTime;
         }
         else
         {
-            if (_staminaBase < 15f)
-            {
-                _staminaBase += _staminaIncrease * Time.deltaTime;
-            }
+            _movement = transform.TransformDirection(_playerMovement) * _speed;
+            _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+            _staminaBase += _staminaIncrease * Time.deltaTime;
         }
     }
 
-    private void isExhausted (float _currentStamina)
+    /*private void isExhausted (float _currentStamina)
     {
         if (_currentStamina == 0)
         {
@@ -99,7 +91,7 @@ public class Player : MonoBehaviour
         {
             _noEnergy = false;
         }
-    }
+    }*/
 
     /*private void playerMovement()
     {

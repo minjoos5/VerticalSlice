@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e25a31e5098be48aaa491ef79e7827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staminaSlider: {fileID: 370172924}
 --- !u!114 &370172924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,6 +1217,10 @@ MonoBehaviour:
   _runSpeed: 7
   _mouseSensitivity: 200
   _collider: {fileID: 530091449}
+  _noEnergy: 0
+  _staminaDecrease: 5
+  _staminaIncrease: 2
+  _staminaBase: 10
 --- !u!1 &533054568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,6 +1925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 1480751161}
   _itemDetected: 0
+  _playerAttack: 0
 --- !u!4 &794740963
 Transform:
   m_ObjectHideFlags: 0

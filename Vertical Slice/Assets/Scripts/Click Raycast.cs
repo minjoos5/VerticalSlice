@@ -10,6 +10,8 @@ public class ClickRaycast : MonoBehaviour
 
     public bool _itemDetected = false;
 
+    public bool _playerAttack = false;
+
     public void InteractionE_Cassette()
     {
         RaycastHit _hit;

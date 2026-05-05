@@ -11,6 +11,8 @@ public class Knife : Items
     [SerializeField] AudioSource _attackSFX;
 
     public float _power = 10f;
+
+
     void Start()
     {
         //gameObject.SetActive(false);
