@@ -27,7 +27,7 @@ public class Knife : Items
     {
         if (_hasKnife == true)
         {
-            Vector3 _attack = transform.forward;
+            Vector3 _attack = transform.position;
             _NPCrb.AddForce(_attack * _power, ForceMode.Impulse);
             _attackSFX.Play(0);
         }

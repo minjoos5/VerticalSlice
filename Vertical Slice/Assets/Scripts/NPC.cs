@@ -30,6 +30,8 @@ public class NPC : MonoBehaviour
     public float _distance;
     public bool _isAttacking = false;
 
+    public bool _isDetected = false;
+
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -72,11 +74,13 @@ public class NPC : MonoBehaviour
             if (_hit.collider.gameObject.CompareTag("Player") && _warning.isPlaying == false)
             {
                 _warning.Play();
-                Debug.Log("Sound is playing");
+                //Debug.Log("Sound is playing");
+                _isDetected = true;
             }
             else
             {
-                //_warning.Stop();
+                _warning.Stop();
+                _isDetected = false;
             }
             
         }
@@ -124,6 +128,7 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isChasing", true);
         _animator.SetBool("isAttacking", false);
         _animator.SetBool("isWalking", false);
+        _animator.SetBool("Hit", false);
         _isAttacking = false;
     }
     // declared in graph
@@ -136,6 +141,7 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", true);
         _animator.SetBool("isWalking", false);
+        _animator.SetBool("Hit", false);
         _isAttacking = true;
     }
     // declared in graph
@@ -148,6 +154,19 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", false);
         _animator.SetBool("isWalking", true);
+        _animator.SetBool("Hit", false);
+        _isAttacking = false;
+    }
+
+    public void HitAnimation()
+    {
+        //agent.speed = 0.2f;
+        agent.speed = 0.05f;
+        //Debug.Log ("Walking now");
+        _animator.SetBool("isChasing", false);
+        _animator.SetBool("isAttacking", false);
+        _animator.SetBool("isWalking", false);
+        _animator.SetBool("Hit", true);
         _isAttacking = false;
     }
     // declared in graph

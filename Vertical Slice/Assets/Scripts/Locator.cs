@@ -36,5 +36,7 @@ public class Locator : MonoBehaviour
     public Key _key;
 
     public Message _message;
+
+    public Stamina _stamina;
     
 }
