@@ -66,7 +66,12 @@ public class ClickRaycast : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Locator.Instance._knife.AttackwKnife();
+                _playerAttack = true;
             }
+        }
+        else
+        {
+            _playerAttack = false;
         }
     }
 

@@ -24,7 +24,12 @@ public class Player : MonoBehaviour
 
     public float _staminaIncrease = 2f;
 
-    public float _staminaBase = 15f;
+    public float _staminaBase;
+
+    public float _maxStamina = 15f;
+    public float _minStamina = 0.1f;
+
+    float xPos = Mathf.Clamp(xValue, xMin, xMax);
 
     void Start()
     {
@@ -58,16 +63,17 @@ public class Player : MonoBehaviour
         _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         //isExhausted(_staminaBase);
+        // check to see if X or Y axis of _playerMovement is non-0 before calling playerMovement()
         playerMovement();
     }
 
     private void playerMovement()
     {
-        Locator.Instance._stamina.UIupdate(_staminaBase);
+        Locator.Instance._stamina.UIupdate(_staminaBase, _maxStamina);
         Vector3 _movement;
         //_rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
-        if (Input.GetKey(KeyCode.Space) && _staminaBase != 0)
+        if (Input.GetKey(KeyCode.Space) && _staminaBase > _minStamina)
         {
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
@@ -79,6 +85,8 @@ public class Player : MonoBehaviour
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase += _staminaIncrease * Time.deltaTime;
         }
+
+        // look for unity clamp documentation
     }
 
     /*private void isExhausted (float _currentStamina)

@@ -23,6 +23,8 @@ public class NPC : MonoBehaviour
     [SerializeField] public GameObject _head;
 
     [SerializeField] public AudioSource _warning;
+
+    [SerializeField] public GameObject _clickRaycast;
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
