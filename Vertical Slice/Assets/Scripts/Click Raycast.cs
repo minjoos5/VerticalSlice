@@ -69,10 +69,6 @@ public class ClickRaycast : MonoBehaviour
                 _playerAttack = true;
             }
         }
-        else
-        {
-            _playerAttack = false;
-        }
     }
 
     /*public virtual void InteractionE()

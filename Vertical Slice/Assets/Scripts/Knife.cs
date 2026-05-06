@@ -10,6 +10,10 @@ public class Knife : Items
 
     [SerializeField] AudioSource _attackSFX;
 
+    [SerializeField] Transform _player;
+
+    [SerializeField] Transform _NPC;
+
     public float _power = 10f;
 
 
@@ -29,7 +33,8 @@ public class Knife : Items
     {
         if (_hasKnife == true)
         {
-            Vector3 _attack = transform.position;
+            //(enemyPos - playerPos).normalized * _power
+            Vector3 _attack = (_NPC.transform.position - _player.transform.position).normalized;
             _NPCrb.AddForce(_attack * _power, ForceMode.Impulse);
             _attackSFX.Play(0);
         }

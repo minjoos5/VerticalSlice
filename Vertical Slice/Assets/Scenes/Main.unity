@@ -514,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -551,6 +551,17 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2389330ef2cfb7144864b4204ab08115, type: 2}
+    - target: {fileID: 5866666021909216657, guid: bc14f0028c402b14690ced61aaa46619,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+        'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+        'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom
+        animation clip 'Rib Hit'"
+      objectReference: {fileID: 0}
     - target: {fileID: 7021014693780275094, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -590,6 +601,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 645139888}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 645139881}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 645139880}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 645139879}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -599,14 +622,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 645139885}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 645139881}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 645139880}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       insertIndex: -1
@@ -776,7 +791,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1221,6 +1236,8 @@ MonoBehaviour:
   _staminaDecrease: 5
   _staminaIncrease: 2
   _staminaBase: 10
+  _maxStamina: 15
+  _minStamina: 0
 --- !u!1 &533054568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,13 +1461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Walk
-      State","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Chase
-      State","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Attack
-      State","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &645139883
 MonoBehaviour:
@@ -1469,6 +1480,7 @@ MonoBehaviour:
   _message: {fileID: 1214228412}
   _head: {fileID: 385201076}
   _warning: {fileID: 645139887}
+  _clickRaycast: {fileID: 794740961}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 645139876}
   _currentActivity: 0
@@ -1626,6 +1638,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &645139888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645139876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e25836c17ccf14aba04c69ea02f0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 1480751161}
+  _itemDetected: 0
+  _playerAttack: 0
 --- !u!1 &656994461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,7 +1930,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794740963}
-  - component: {fileID: 794740962}
   m_Layer: 0
   m_Name: Click Detector Raycast
   m_TagString: Raycast
@@ -1911,21 +1937,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &794740962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794740961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e25836c17ccf14aba04c69ea02f0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 1480751161}
-  _itemDetected: 0
-  _playerAttack: 0
 --- !u!4 &794740963
 Transform:
   m_ObjectHideFlags: 0
@@ -2372,7 +2383,7 @@ MonoBehaviour:
   _player: {fileID: 530091453}
   _items: {fileID: 1898233268}
   _NPC: {fileID: 645139883}
-  _clicked: {fileID: 794740962}
+  _clicked: {fileID: 645139888}
   _ui: {fileID: 656994462}
   _cassette: {fileID: 0}
   _cassPl: {fileID: 1688551534}
@@ -3152,6 +3163,8 @@ MonoBehaviour:
   _hasKnife: 0
   _NPCrb: {fileID: 645139884}
   _attackSFX: {fileID: 1085326252}
+  _player: {fileID: 530091452}
+  _NPC: {fileID: 645139886}
   _power: 10
 --- !u!1 &1208497847
 GameObject:
@@ -6218,6 +6231,7 @@ MonoBehaviour:
   _message: {fileID: 0}
   _head: {fileID: 0}
   _warning: {fileID: 0}
+  _clickRaycast: {fileID: 0}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 2053236688}
   _currentActivity: 0

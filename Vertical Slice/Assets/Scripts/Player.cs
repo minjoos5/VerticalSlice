@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
 
     }
         
-
     void Update()
     {
         // Mouse movement
@@ -59,14 +58,15 @@ public class Player : MonoBehaviour
         float _xInput = Input.GetAxis("Horizontal");
         float _zInput = Input.GetAxis("Vertical");
 
+        _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+
+        playerMovement();
+
         //Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
         //transform.position += _playerMovement * _speed * Time.deltaTime;
 
-        _playerMovement = new Vector3 (Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-
         //isExhausted(_staminaBase);
         // check to see if X or Y axis of _playerMovement is non-0 before calling playerMovement()
-        playerMovement();
     }
 
     private void playerMovement()
@@ -93,6 +93,15 @@ public class Player : MonoBehaviour
         // look for unity clamp documentation
     }
 
+    /*private void OnCollisionEnter (Collision collision)
+    {
+        NPC _npc = collision.gameObject.GetComponent<NPC>();
+        if (_npc != null  && Locator.Instance._NPC._isAttacking == true)
+        {
+            Locator.Instance._ui.GameOver();
+        }
+    }*/
+
     /*private void isExhausted (float _currentStamina)
     {
         if (_currentStamina == 0)
@@ -116,14 +125,4 @@ public class Player : MonoBehaviour
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
         }
     }*/
-
-    private void OnCollisionEnter (Collision collision)
-    {
-        NPC _npc = collision.gameObject.GetComponent<NPC>();
-        if (_npc != null  && Locator.Instance._NPC._isAttacking == true)
-        {
-            Locator.Instance._ui.GameOver();
-        }
-    }
-
 }

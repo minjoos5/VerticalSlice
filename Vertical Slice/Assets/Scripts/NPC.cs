@@ -88,40 +88,6 @@ public class NPC : MonoBehaviour
         }
     }
 
-    /*public void UpdateState()
-    {
-        if (_distance >= 4f)
-        {
-            _currentActivity = NPCstate.Walking;
-        }
-        else if (_distance < 4f && _distance > 1f)
-        {
-            _currentActivity = NPCstate.Chasing;
-        }
-        else if (_distance <= 1f)
-        {
-            _currentActivity = NPCstate.Attacking;
-        }
-    }*/
-
-    /*public void UpdateAnimation()
-    {
-        switch (_currentActivity)
-        {
-            case NPCstate.Chasing:
-            ChaseAnimation();
-            break;
-
-            case NPCstate.Attacking:
-            AttackAnimation();
-            break;
-
-            case NPCstate.Walking:
-            WalkAnimation();
-            break;
-        }
-    }*/
-
     public void ChaseAnimation()
     {
         //agent.speed = 1.5f;
@@ -163,13 +129,51 @@ public class NPC : MonoBehaviour
     public void HitAnimation()
     {
         //agent.speed = 0.2f;
-        agent.speed = 0.05f;
+        //agent.speed = 0.05f;
         //Debug.Log ("Walking now");
         _animator.SetBool("isChasing", false);
         _animator.SetBool("isAttacking", false);
         _animator.SetBool("isWalking", false);
         _animator.SetBool("Hit", true);
         _isAttacking = false;
+
+        Debug.Log ("Hit animation is playing");
     }
     // declared in graph
+
+    
+    /*public void UpdateState()
+    {
+        if (_distance >= 4f)
+        {
+            _currentActivity = NPCstate.Walking;
+        }
+        else if (_distance < 4f && _distance > 1f)
+        {
+            _currentActivity = NPCstate.Chasing;
+        }
+        else if (_distance <= 1f)
+        {
+            _currentActivity = NPCstate.Attacking;
+        }
+    }*/
+
+    /*public void UpdateAnimation()
+    {
+        switch (_currentActivity)
+        {
+            case NPCstate.Chasing:
+            ChaseAnimation();
+            break;
+
+            case NPCstate.Attacking:
+            AttackAnimation();
+            break;
+
+            case NPCstate.Walking:
+            WalkAnimation();
+            break;
+        }
+    }*/
+
 }
