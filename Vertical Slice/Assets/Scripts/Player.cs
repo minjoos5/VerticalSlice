@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _speed = 2f;
     [SerializeField] private float _runSpeed = 10f;
     [SerializeField] private float _mouseSensitivity = 100f;
 
@@ -82,12 +82,14 @@ public class Player : MonoBehaviour
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase -= _staminaDecrease * Time.deltaTime;
+            //Debug.Log("current speed: " + _runSpeed);
         }
         else
         {
             _movement = transform.TransformDirection(_playerMovement) * _speed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase += _staminaIncrease * Time.deltaTime;
+            //Debug.Log("current speed: " + _speed);
         }
 
         // look for unity clamp documentation

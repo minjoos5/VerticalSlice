@@ -11,5 +11,6 @@ public class Stamina : MonoBehaviour
     {
         _staminaSlider.value = _currentStamina / _maximum;
         //Debug.LogFormat("current: {0}, max: {1}, percent: {2}", _currentStamina, _maximum, _staminaSlider.value);
+        //Debug.Log("current speed: " + _currentStamina);
     }
 }

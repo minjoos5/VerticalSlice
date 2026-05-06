@@ -78,11 +78,13 @@ public class NPC : MonoBehaviour
                 _warning.Play();
                 //Debug.Log("Sound is playing");
                 _isDetected = true;
+                Debug.Log("Hitting Now");
             }
             else
             {
                 _warning.Stop();
                 _isDetected = false;
+                Debug.Log("No");
             }
             
         }
