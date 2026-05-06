@@ -12,6 +12,8 @@ public class ClickRaycast : MonoBehaviour
 
     public bool _playerAttack = false;
 
+    public GameObject _cassetteInstance;
+
     public void InteractionE_Cassette()
     {
         RaycastHit _hit;
@@ -20,14 +22,20 @@ public class ClickRaycast : MonoBehaviour
         if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
         {   // get components is required
 
-        
             Transform objectHit = _hit.transform;
             //Locator.Instance._ui._EToInteract.SetActive(true);
             _itemDetected = true;
+            bool _trueCassette = _cassetteInstance.GetComponent<Cassette>()._isTrueCassette;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Locator.Instance._ui.MapDisplay();
+                Debug.Log("E is pressed");
+                Debug.Log("Current cassette " + _trueCassette);
+                if (_trueCassette == true)
+                {
+                    Locator.Instance._ui.MapDisplay();
+                    Debug.Log("UI triggered");
+                }
                 //Locator.Instance._ui._EToInteract.SetActive(false);
             }
         }
