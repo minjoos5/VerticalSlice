@@ -19,6 +19,8 @@ public class ClickRaycast : MonoBehaviour
         
         if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
         {   // get components is required
+
+        
             Transform objectHit = _hit.transform;
             //Locator.Instance._ui._EToInteract.SetActive(true);
             _itemDetected = true;
