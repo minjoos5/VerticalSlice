@@ -51,7 +51,7 @@ public class Items : MonoBehaviour
 
     public virtual void InheritUpdate()
     {
-        Locator.Instance._clicked.InteractionE_Cassette();
+        //Locator.Instance._clicked.InteractionE_Cassette();
         Locator.Instance._clicked.InteractionE_Door();
         Locator.Instance._clicked.InteractionE_Knife();
     }

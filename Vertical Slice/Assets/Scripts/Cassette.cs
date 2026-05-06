@@ -25,6 +25,7 @@ public class Cassette : Items
     public override void InheritUpdate()
     {
         base.InheritUpdate();
+        Locator.Instance._clicked.InteractionE_Cassette();
     }
 
     override public void OnMouseDown()

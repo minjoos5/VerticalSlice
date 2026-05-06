@@ -73,18 +73,18 @@ public class NPC : MonoBehaviour
             Transform objectHit = _hit.transform;
             Debug.DrawRay(_headPos.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.yellow);
 
-            if (_hit.collider.gameObject.CompareTag("Player") && _warning.isPlaying == false)
+            if (_hit.collider.gameObject.CompareTag("Player"))// && _warning.isPlaying == false)
             {
                 _warning.Play();
                 //Debug.Log("Sound is playing");
                 _isDetected = true;
-                Debug.Log("Hitting Now");
+                //Debug.Log("Hitting Now");
             }
             else
             {
                 _warning.Stop();
                 _isDetected = false;
-                Debug.Log("No");
+                //Debug.Log("No");
             }
             
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -62,6 +63,10 @@ public class UI : MonoBehaviour
 
     public void MapDisplay()
     {
+        /*if (Locator.Instance._cassette._isTrueCassette == true)
+        {
+        }*/
+
         _map.SetActive(true);
         _checkMap = true;
     }
