@@ -29,6 +29,8 @@ public class Locator : MonoBehaviour
 
     public CassettePlayer _cassPl;
 
+    public CassetteManager _cassManager;
+
     public Door _door;
 
     public Knife _knife;

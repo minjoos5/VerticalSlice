@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public class Cassette : Items
+public class Cassette : MonoBehaviour
 {
+    [SerializeField] public List <GameObject> _cassLocation = new List <GameObject> {};
+
+    [SerializeField] GameObject _cassPrefab;
 
     public bool _isTrueCassette;
 
@@ -14,7 +18,9 @@ public class Cassette : Items
     void Awake()
     {
         _gotRightOne = false;
-        _isTrueCassette = false;
+        _isTrueCassette = false; 
+
+        CassettePrefab();
     }
 
     void Start()
@@ -22,16 +28,21 @@ public class Cassette : Items
         gameObject.SetActive(true);
     }
 
-    public override void InheritUpdate()
+    public void CassettePrefab()
     {
-        base.InheritUpdate();
-        Locator.Instance._clicked.InteractionE_Cassette();
+        for (int p = 0; p < 3; p++)
+        {
+            GameObject _threeCass = Instantiate(_cassPrefab, _cassLocation[p].transform.position, Quaternion.identity);     
+        }
     }
 
-    override public void OnMouseDown()
+    public void Update()
     {
-        base.OnMouseDown();
+        Locator.Instance._cassPl.InteractionE_Cassette();
+    }
 
+    public void OnMouseDown()
+    {
         if (_gotRightOne == true)
         {
             _isTrueCassette = false;
@@ -52,5 +63,7 @@ public class Cassette : Items
                 Debug.Log("true tape");
             }
         }
+
+        gameObject.SetActive(false);
     }
 }
