@@ -1700,8 +1700,6 @@ MonoBehaviour:
   _mainCamera: {fileID: 1480751161}
   _itemDetected: 0
   _playerAttack: 0
-  _cassetteInstance: {fileID: 7688566829362078199, guid: 394425c3161b58f4d95486c56bc490f6,
-    type: 3}
 --- !u!1 &656994461
 GameObject:
   m_ObjectHideFlags: 0

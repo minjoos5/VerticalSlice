@@ -25,11 +25,10 @@ public class Locator : MonoBehaviour
     public ClickRaycast _clicked;
     public UI _ui;
 
-    public Cassette _cassette;
+    //public Cassette _cassette;
 
     public CassettePlayer _cassPl;
 
-    public CassetteManager _cassManager;
 
     public Door _door;
 

@@ -11,7 +11,6 @@ public class Items : MonoBehaviour
     // space to run
     [SerializeField] public List <GameObject> _location = new List <GameObject> {};
     [SerializeField] public List <GameObject> _items = new List <GameObject> {};
-
     //[SerializeField] 
     public Transform _playerTransform;
     public Camera _camera;
@@ -22,7 +21,7 @@ public class Items : MonoBehaviour
 
     void Awake()
     {
-    
+
         _playerTransform = GameObject.Find("Player Capsule").transform;
 
         foreach (GameObject _spot in _location)
@@ -43,12 +42,6 @@ public class Items : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    
 
 
     public void Update()
@@ -58,7 +51,7 @@ public class Items : MonoBehaviour
 
     public virtual void InheritUpdate()
     {
-        //Locator.Instance._clicked.InteractionE_Cassette();
+        Locator.Instance._clicked.InteractionE_Cassette();
         Locator.Instance._clicked.InteractionE_Door();
         Locator.Instance._clicked.InteractionE_Knife();
     }

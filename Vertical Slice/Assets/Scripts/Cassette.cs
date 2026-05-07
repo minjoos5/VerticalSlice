@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+/*
 public class Cassette : MonoBehaviour
 {
     [SerializeField] public List <GameObject> _cassLocation = new List <GameObject> {};
@@ -67,3 +67,4 @@ public class Cassette : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+*/

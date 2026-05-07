@@ -139,7 +139,7 @@ public class NPC : MonoBehaviour
         _animator.SetBool("Hit", true);
         _isAttacking = false;
 
-        //Debug.Log ("Hit animation is playing");
+        Debug.Log ("Hit animation is playing");
     }
     // declared in graph
 
