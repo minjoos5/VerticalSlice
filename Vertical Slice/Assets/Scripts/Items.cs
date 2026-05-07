@@ -14,7 +14,7 @@ public class Items : MonoBehaviour
     //[SerializeField] 
     public Transform _playerTransform;
     public Camera _camera;
-    //[SerializeField] GameObject _cassPrefab;
+
     public List <GameObject> _temp = new List <GameObject> {};
 
     public float _interact = 10.0f;

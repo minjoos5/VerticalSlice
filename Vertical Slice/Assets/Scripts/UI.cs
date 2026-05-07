@@ -30,7 +30,7 @@ public class UI : MonoBehaviour
         _checkMap = false;
     }
 
-    public void Update()
+    /*public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && _checkMap == true)
         {
@@ -42,7 +42,8 @@ public class UI : MonoBehaviour
             _EToInteract.SetActive(false);
             Locator.Instance._clicked._itemDetected = false;
         }
-    }
+    }*/
+    
     public void GameOver()
     {
         Time.timeScale = 0f;

@@ -12,27 +12,51 @@ public class ClickRaycast : MonoBehaviour
 
     public bool _playerAttack = false;
 
+    public bool _trueTape = false;
 
-    public GameObject _cassetteInstance;
+    public bool _falseTape = false;
 
+    public GameObject _trueTapeObj;
+
+    public GameObject _falseTapeObj;
+
+    void Start()
+    {
+        _itemDetected = false;
+
+        _playerAttack = false;
+
+        _trueTape = false;
+
+        _falseTape = false;
+
+    }
+
+    void Update()
+    {  
+
+    }
     public void InteractionE_Cassette()
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
         if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
-        {   // get components is required
-
-    
+        {   
             Transform objectHit = _hit.transform;
-            //Locator.Instance._ui._EToInteract.SetActive(true);
+            Locator.Instance._ui._EToInteract.SetActive(true);
             _itemDetected = true;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if ()
                 Locator.Instance._ui.MapDisplay();
-                //Locator.Instance._ui._EToInteract.SetActive(false);
+                
             }
+        }
+        else
+        {
+            //Locator.Instance._ui._EToInteract.SetActive(false);
         }
     }
 

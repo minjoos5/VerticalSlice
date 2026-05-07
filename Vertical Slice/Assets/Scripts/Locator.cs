@@ -25,10 +25,7 @@ public class Locator : MonoBehaviour
     public ClickRaycast _clicked;
     public UI _ui;
 
-    //public Cassette _cassette;
-
     public CassettePlayer _cassPl;
-
 
     public Door _door;
 
@@ -40,4 +37,6 @@ public class Locator : MonoBehaviour
 
     public Stamina _stamina;
     
+    //public Cassette _cassette;
+
 }
