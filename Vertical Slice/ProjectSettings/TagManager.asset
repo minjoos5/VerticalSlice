@@ -11,6 +11,8 @@ TagManager:
   - NPC
   - CassettePlayer
   - Door
+  - True
+  - False
   layers:
   - Default
   - TransparentFX

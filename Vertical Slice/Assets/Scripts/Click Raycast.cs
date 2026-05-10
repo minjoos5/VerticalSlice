@@ -34,7 +34,8 @@ public class ClickRaycast : MonoBehaviour
 
     void Update()
     {  
-
+        scope.Get("name");
+        bool _correctTape = (bool)Variables.Object(TrueTape).Get("_correctTape")
     }
     public void InteractionE_Cassette()
     {
