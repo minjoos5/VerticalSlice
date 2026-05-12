@@ -31,7 +31,23 @@ For my updated breakdown, I added the state machine graph with a brief explanati
 This animation is related to the player’s death/active status. The UI shows a game-over screen when the player is attacked by the NPC. The UI screen will show up when the player’s collider collides with the NPC’s collider, whose current state is “attack.” Since the calculation is based on the distance between them, the game-over screen will show up, though the attack animation is not played. (This happens when the player collides with the NPC so fast.) The state machine is directly related to the gameover UI.
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+### Answer 1
+Breakdown: implementation of random cassette tapes
+! I implemented this feature before (prefab), but because it caused too many errors in the game, so I’m replacing it. !
+
+- Randomly spawn cassette tapes
+  - Create three different cassettes with different names (1 true tape & 2 fake tapes)
+  - Allocate each game object in the list of item scripts
+  - The code will shuffle the list of locations (empty game objects that are located randomly around the map).
+  - The items are located at one of the random spawn points in the map.
+- For each tape, the Update method will check the current status of the boolean value and update it based on the interaction with the player.
+  - Define the Boolean variable to trigger the interaction between the cassette tape and the correct cassette tape.
+  - Boolean variable declared in the graph → checks the cassette status
+  - If the player picks up the correct cassette, the graph of the correct cassette will set the boolean value true.
+  - Based on the Boolean value, the cassette player will play two different images
+    - The image of the map (correct tape)
+    - The image of the glitch (fake tape)
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
