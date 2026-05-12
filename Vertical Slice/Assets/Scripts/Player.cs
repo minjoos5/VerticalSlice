@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
         InteractionE_Cassette();
         InteractionE_Door();
         InteractionE_Knife();
+
+        Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
     }
 
     private void playerMovement()
@@ -161,8 +163,8 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Locator.Instance._knife.AttackwKnife();
                 Variables.Scene(_npcObj).Set("_playerAttack", true);
+                Locator.Instance._knife.AttackwKnife();
             }
         }
     }
