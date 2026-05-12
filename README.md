@@ -31,7 +31,8 @@ For my updated breakdown, I added the state machine graph with a brief explanati
 This animation is related to the player’s death/active status. The UI shows a game-over screen when the player is attacked by the NPC. The UI screen will show up when the player’s collider collides with the NPC’s collider, whose current state is “attack.” Since the calculation is based on the distance between them, the game-over screen will show up, though the attack animation is not played. (This happens when the player collides with the NPC so fast.) The state machine is directly related to the gameover UI.
 
 ## Milestone 2 Devlog
-1. Breakdown: implementation of random cassette tapes
+### Answer 1
+Breakdown: implementation of random cassette tapes
 ! I implemented this feature before (prefab), but because it caused too many errors in the game, so I’m replacing it. !
 
 - Randomly spawn cassette tapes
