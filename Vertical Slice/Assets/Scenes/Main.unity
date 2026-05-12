@@ -514,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -669,6 +669,7 @@ MonoBehaviour:
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_correctTape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_door","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"_readyToEscape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_playerAttack","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1163302408}
@@ -1289,7 +1290,7 @@ MonoBehaviour:
   _minStamina: 0
   _itemDetected: 0
   _trueTapeObj: {fileID: 3672354366859014148}
-  _playerAttack: 0
+  _npcObj: {fileID: 645139876}
 --- !u!1 &533054568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,7 +1615,6 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
-  _playerAttackNPC: 0
 --- !u!54 &645139884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6790,7 +6790,6 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
-  _playerAttackNPC: 0
 --- !u!1 &2066676576
 GameObject:
   m_ObjectHideFlags: 0

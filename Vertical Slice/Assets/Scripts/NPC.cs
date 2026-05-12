@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour
 
     public bool _isDetected = false;
 
-    public bool _playerAttackNPC;
+    //public bool _playerAttackNPC;
 
     public void Awake()
     {
@@ -45,7 +45,6 @@ public class NPC : MonoBehaviour
     public void Start()
     {
         gameObject.SetActive(true);
-        //playerAttackNPC = _playerClass._playerAttack;
     }
 
     // Update is called once per frame
@@ -56,7 +55,7 @@ public class NPC : MonoBehaviour
         //CalculateDistance();
         //UpdateState();
         //UpdateAnimation();
-        _playerAttackNPC = _playerClass._playerAttack;
+        //_playerAttackNPC = _playerClass._playerAttack;
     }
 
     public void CalculateDistance()

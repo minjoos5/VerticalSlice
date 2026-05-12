@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     private float _maxDistance = 1.0f;
 
-    public bool _playerAttack = false;
+    public GameObject _npcObj;
     
 
     void Start()
@@ -162,7 +162,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Locator.Instance._knife.AttackwKnife();
-                _playerAttack = true;
+                Variables.Scene(_npcObj).Set("_playerAttack", true);
             }
         }
     }
