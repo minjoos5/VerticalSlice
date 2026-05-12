@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public AudioSource _warning;
 
-    [SerializeField] public Knife _clickRaycast;
+    [SerializeField] public Knife _knife;
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
@@ -38,7 +38,7 @@ public class NPC : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         //gameObject.SetActive(false);
-        bool _playerAttackNPC = _clickRaycast._playerAttack;
+        bool _playerAttackNPC = _knife._playerAttack;
     }
 
     public void Start()

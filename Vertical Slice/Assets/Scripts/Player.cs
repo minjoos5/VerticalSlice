@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     private Transform _cameraTransform;
 
+    public Camera _mainCamera;
+
     private Rigidbody _rb;
     private float _rotationX = 0f;
 
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour
     public float _maxStamina = 15f;
     public float _minStamina = 0.1f;
 
+    public bool _itemDetected = false;
+    public GameObject _trueTapeObj;
     
 
     void Start()
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _rb = this.GetComponent<Rigidbody>();
+        _itemDetected = false;
 
     }
         
@@ -62,11 +67,9 @@ public class Player : MonoBehaviour
 
         playerMovement();
 
-        //Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
-        //transform.position += _playerMovement * _speed * Time.deltaTime;
-
-        //isExhausted(_staminaBase);
-        // check to see if X or Y axis of _playerMovement is non-0 before calling playerMovement()
+        InteractionE_Cassette();
+        InteractionE_Door();
+        InteractionE_Knife();
     }
 
     private void playerMovement()
@@ -95,6 +98,69 @@ public class Player : MonoBehaviour
         // look for unity clamp documentation
     }
 
+    public void InteractionE_Cassette()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        bool _checkTape = (bool)Variables.Object(_trueTapeObj).Get("_correctTape");
+        //bool _checkError = (bool)Variables.Object(_falseTapeObj).Get("_falseTape");
+        
+        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
+        {   
+            Transform objectHit = _hit.transform;
+            //Locator.Instance._ui._EToInteract.SetActive(true);
+            _itemDetected = true;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("problem with the logic.");
+                Locator.Instance._ui.MapDisplay();
+            }
+        }
+        else
+        {
+            
+        }
+    }
+
+
+    public void InteractionE_Door()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("Door"))
+        {
+            Transform objectHit = _hit.transform;
+            //Locator.Instance._ui._EToInteract.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //Debug.Log("hit E on " + gameObject.name);
+                //Locator.Instance._ui._EToInteract.SetActive(false);
+                //Locator.Instance._ui.
+                Locator.Instance._door.Escape();
+            }
+            
+            
+        }
+    }
+
+    public void InteractionE_Knife()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 10f) && _hit.collider.gameObject.CompareTag("NPC"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Locator.Instance._knife.AttackwKnife();
+                Locator.Instance._knife._playerAttack = true;
+            }
+        }
+    }
+    
     /*private void OnCollisionEnter (Collision collision)
     {
         NPC _npc = collision.gameObject.GetComponent<NPC>();
@@ -127,4 +193,11 @@ public class Player : MonoBehaviour
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
         }
     }*/
+
+    
+        //Vector3 _playerMovement = transform.right * _xInput + transform.forward * _zInput;
+        //transform.position += _playerMovement * _speed * Time.deltaTime;
+
+        //isExhausted(_staminaBase);
+        // check to see if X or Y axis of _playerMovement is non-0 before calling playerMovement()
 }

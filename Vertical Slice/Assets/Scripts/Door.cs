@@ -22,10 +22,9 @@ public class Door : Items
     }
 
 
-    public override void InheritUpdate()
+    public void Update()
     {
-        base.InheritUpdate();
-        Locator.Instance._clicked.InteractionE_Door();
+        Locator.Instance._player.InteractionE_Door();
     }
     public void Escape()
     {

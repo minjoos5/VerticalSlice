@@ -42,23 +42,21 @@ public class Items : MonoBehaviour
         }
     }
 
+    public virtual void OnMouseDown()
+    {
+        Debug.Log("clicked!");
+        gameObject.SetActive(false);
+    }
 
-
-    public void Update()
+        /*public void Update()
     {
         InheritUpdate();
     }
 
     public virtual void InheritUpdate()
     {
-        Locator.Instance._clicked.InteractionE_Cassette();
-        Locator.Instance._clicked.InteractionE_Door();
+        Locator.Instance._player.InteractionE_Cassette();
+        Locator.Instance._player.InteractionE_Door();
         Locator.Instance._knife.InteractionE_Knife();
-    }
-
-    public virtual void OnMouseDown()
-    {
-        Debug.Log("clicked!");
-        gameObject.SetActive(false);
-    }
+    }*/
 }

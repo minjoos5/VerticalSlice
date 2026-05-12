@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickRaycast : MonoBehaviour
-{
+{/*
     [SerializeField] Camera _mainCamera;
 
     public bool _itemDetected = false;
@@ -34,7 +34,7 @@ public class ClickRaycast : MonoBehaviour
 
     void Update()
     {  
-        
+        Debug.Log(Input.GetKeyDown(KeyCode.E));
     }
     public void InteractionE_Cassette()
     {
@@ -63,7 +63,7 @@ public class ClickRaycast : MonoBehaviour
         }
         else
         {
-            //Locator.Instance._ui._EToInteract.SetActive(false);
+            
         }
     }
 
