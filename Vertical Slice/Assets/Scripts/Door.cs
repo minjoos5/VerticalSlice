@@ -1,34 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Door : Items
 {
-    public bool _readyToEscape = false;
+    public GameObject _door;
+    public GameObject _key;
+
+    public bool _readyToEscape;
 
     public void Start()
     {
+        //bool _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
         gameObject.SetActive(false);
     }
-    public void SpawnDoor()
-    {
-        Debug.Log("Door is here!");
-        if (Locator.Instance._key._gotKey == true)
-        {
-            Debug.Log("the door is spawned");
-            gameObject.SetActive(true);
-            _readyToEscape = true;
-        }
-    }
-
 
     public void Update()
     {
-        Locator.Instance._player.InteractionE_Door();
+        _readyToEscape = (bool)Variables.Scene(_door).Get("_readyToEscape");
     }
+
     public void Escape()
     {
-        if (Locator.Instance._key._gotKey == true)
+        if (_readyToEscape == true)
         {
             Locator.Instance._ui.GameWin();
         }
@@ -39,4 +34,17 @@ public class Door : Items
         Debug.Log("cannot click");
     }
 
+    /*public void SpawnDoor()
+    {
+        bool _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
+        Debug.Log("Door is here!");
+
+        if (_gotKey == true)
+        {
+            Debug.Log("the door is spawned");
+            Debug.Log("current key val: " + _gotKey);
+            gameObject.SetActive(true);
+            _readyToEscape = true;
+        }
+    }*/
 }

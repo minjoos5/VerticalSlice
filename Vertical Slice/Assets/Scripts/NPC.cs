@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public AudioSource _warning;
 
-    [SerializeField] public Knife _knife;
+    [SerializeField] public Player _playerClass;
     public GameObject _playerPos;
     public GameObject _NPCPos;
     private NavMeshAgent agent;
@@ -34,16 +34,18 @@ public class NPC : MonoBehaviour
 
     public bool _isDetected = false;
 
+    public bool _playerAttackNPC;
+
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         //gameObject.SetActive(false);
-        bool _playerAttackNPC = _knife._playerAttack;
     }
 
     public void Start()
     {
         gameObject.SetActive(true);
+        //playerAttackNPC = _playerClass._playerAttack;
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class NPC : MonoBehaviour
         //CalculateDistance();
         //UpdateState();
         //UpdateAnimation();
+        _playerAttackNPC = _playerClass._playerAttack;
     }
 
     public void CalculateDistance()

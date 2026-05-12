@@ -667,10 +667,13 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"_gotKey","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_isClicked","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_correctTape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_door","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"_readyToEscape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1163302408}
     - {fileID: 1214228412}
+    - {fileID: 7416050881621691956}
 --- !u!4 &369112064
 Transform:
   m_ObjectHideFlags: 0
@@ -1286,6 +1289,7 @@ MonoBehaviour:
   _minStamina: 0
   _itemDetected: 0
   _trueTapeObj: {fileID: 3672354366859014148}
+  _playerAttack: 0
 --- !u!1 &533054568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,13 +1607,14 @@ MonoBehaviour:
   _message: {fileID: 1214228412}
   _head: {fileID: 385201076}
   _warning: {fileID: 645139887}
-  _knife: {fileID: 0}
+  _playerClass: {fileID: 530091453}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 645139876}
   _currentActivity: 0
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
+  _playerAttackNPC: 0
 --- !u!54 &645139884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2678,7 +2683,7 @@ MonoBehaviour:
   _clicked: {fileID: 0}
   _ui: {fileID: 656994462}
   _cassPl: {fileID: 1688551534}
-  _door: {fileID: 7416050881621691959}
+  _door: {fileID: 7416050881621691962}
   _knife: {fileID: 1207668477}
   _key: {fileID: 0}
   _message: {fileID: 0}
@@ -3456,7 +3461,6 @@ MonoBehaviour:
   _NPC: {fileID: 645139886}
   _mainCamera: {fileID: 0}
   _power: 10
-  _playerAttack: 0
 --- !u!1 &1208497847
 GameObject:
   m_ObjectHideFlags: 0
@@ -6779,13 +6783,14 @@ MonoBehaviour:
   _message: {fileID: 0}
   _head: {fileID: 0}
   _warning: {fileID: 0}
-  _knife: {fileID: 0}
+  _playerClass: {fileID: 0}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 2053236688}
   _currentActivity: 0
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
+  _playerAttackNPC: 0
 --- !u!1 &2066676576
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,24 +7792,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4546106402595125429, guid: 137e90c3b591a5e4e874eca36a4aa913, type: 3}
---- !u!1 &1823407352238127603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6848924271162102967}
-  - component: {fileID: 7577015980135499099}
-  - component: {fileID: 6232974178183424883}
-  m_Layer: 0
-  m_Name: F
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!23 &1847456717205463176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8701,7 +8688,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6206509890365450018}
-  - {fileID: 6848924271162102967}
   m_Father: {fileID: 1898233270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4752888626145578689
@@ -9147,8 +9133,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 75.83962, y: 27.382807, z: 63.343605}
-  m_Center: {x: 6.0989046, y: 2.7555256, z: 0.17193547}
+  m_Size: {x: 225.78096, y: 40.834816, z: 220.03499}
+  m_Center: {x: 4.692887, y: 9.481519, z: -7.9009366}
 --- !u!54 &5694059874321760585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9449,48 +9435,6 @@ Transform:
   - {fileID: 5674356195766040020}
   m_Father: {fileID: 4736112000104974829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &6232974178183424883
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823407352238127603}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5b151f9cbe9910849af577791bffaf8f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &6266518077101543003
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9672,21 +9616,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &6848924271162102967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823407352238127603}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.917567, y: -110.829445, z: -0.48645484}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4736112000104974829}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7000065049748301271
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10002,16 +9931,15 @@ GameObject:
   - component: {fileID: 4736112000104974829}
   - component: {fileID: 7416050881621691958}
   - component: {fileID: 7416050881621691957}
-  - component: {fileID: 7416050881621691959}
   - component: {fileID: 7416050881621691961}
-  - component: {fileID: 7416050881621691960}
+  - component: {fileID: 7416050881621691962}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &7416050881621691957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10060,41 +9988,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &7416050881621691959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7416050881621691956}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9df20e9f78694c448f43ad613ed6ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _location: []
-  _items: []
-  _playerTransform: {fileID: 530091452}
-  _camera: {fileID: 1480751161}
-  _temp: []
-  _interact: 0
-  _readyToEscape: 0
---- !u!114 &7416050881621691960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7416050881621691956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: e1c1940b246413c4fada2c388b275b47, type: 2}
 --- !u!114 &7416050881621691961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10110,6 +10003,27 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!114 &7416050881621691962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416050881621691956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9df20e9f78694c448f43ad613ed6ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _location: []
+  _items: []
+  _playerTransform: {fileID: 530091452}
+  _camera: {fileID: 1480751161}
+  _temp: []
+  _interact: 10
+  _door: {fileID: 7416050881621691956}
+  _key: {fileID: 2463706537328403156}
+  _readyToEscape: 0
 --- !u!64 &7422335672412553149
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10162,14 +10076,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742517974343585154}
   m_Mesh: {fileID: -2052996276529254954, guid: 137e90c3b591a5e4e874eca36a4aa913, type: 3}
---- !u!33 &7577015980135499099
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823407352238127603}
-  m_Mesh: {fileID: -1644355878584749679, guid: d5ab3fad0e444cc479a88bc3c7053743, type: 3}
 --- !u!23 &7622566156614220465
 MeshRenderer:
   m_ObjectHideFlags: 0

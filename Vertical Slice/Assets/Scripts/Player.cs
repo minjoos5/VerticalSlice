@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     public GameObject _trueTapeObj;
 
     private float _maxDistance = 1.0f;
+
+    public bool _playerAttack = false;
     
 
     void Start()
@@ -155,12 +157,12 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("NPC"))
+        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("NPC"))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Locator.Instance._knife.AttackwKnife();
-                Locator.Instance._knife._playerAttack = true;
+                _playerAttack = true;
             }
         }
     }

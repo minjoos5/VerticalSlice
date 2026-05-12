@@ -17,14 +17,13 @@ public class Knife : Items
     [SerializeField] Camera _mainCamera;
     public float _power = 10f;
 
-    public bool _playerAttack = false;
+    //public bool _playerAttack = false;
 
 
-    void Start()
+    void Awake()
     {
         //gameObject.SetActive(false);
         _hasKnife = false;
-        _playerAttack = false;
     }
 
     public override void OnMouseDown()
@@ -44,7 +43,7 @@ public class Knife : Items
         }
     }
 
-    public void InteractionE_Knife()
+    /*public void InteractionE_Knife()
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -57,5 +56,5 @@ public class Knife : Items
                 _playerAttack = true;
             }
         }
-    }
+    }*/
 }
