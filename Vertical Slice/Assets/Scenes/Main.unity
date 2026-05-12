@@ -595,10 +595,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 645139888}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 645139881}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -669,6 +665,8 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Message
       Object","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"_gotKey","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_isClicked","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"_correctTape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1163302408}
@@ -1279,12 +1277,15 @@ MonoBehaviour:
   _runSpeed: 8
   _mouseSensitivity: 200
   _collider: {fileID: 530091449}
+  _mainCamera: {fileID: 1480751161}
   _noEnergy: 0
   _staminaDecrease: 5
   _staminaIncrease: 2
   _staminaBase: 10
   _maxStamina: 15
   _minStamina: 0
+  _itemDetected: 0
+  _trueTapeObj: {fileID: 3672354366859014148}
 --- !u!1 &533054568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1603,7 @@ MonoBehaviour:
   _message: {fileID: 1214228412}
   _head: {fileID: 385201076}
   _warning: {fileID: 645139887}
-  _clickRaycast: {fileID: 794740964}
+  _knife: {fileID: 0}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 645139876}
   _currentActivity: 0
@@ -1760,24 +1761,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &645139888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645139876}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e25836c17ccf14aba04c69ea02f0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 1480751161}
-  _itemDetected: 0
-  _playerAttack: 0
-  _trueTape: 0
-  _falseTape: 0
-  _trueTapeObj: {fileID: 0}
 --- !u!1 &656994461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2231,7 +2214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &794740963
 Transform:
   m_ObjectHideFlags: 0
@@ -2259,12 +2242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e25836c17ccf14aba04c69ea02f0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 1480751161}
-  _itemDetected: 0
-  _playerAttack: 0
-  _trueTape: 0
-  _falseTape: 0
-  _trueTapeObj: {fileID: 3672354366859014148}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,13 +2674,13 @@ MonoBehaviour:
   _player: {fileID: 530091453}
   _items: {fileID: 1898233268}
   _NPC: {fileID: 645139883}
-  _clicked: {fileID: 645139888}
+  _clicked: {fileID: 0}
   _ui: {fileID: 656994462}
   _cassPl: {fileID: 1688551534}
   _door: {fileID: 7416050881621691959}
   _knife: {fileID: 1207668477}
   _key: {fileID: 0}
-  _message: {fileID: 1214228420}
+  _message: {fileID: 0}
   _stamina: {fileID: 370172923}
 --- !u!4 &1022283567
 Transform:
@@ -3476,7 +3453,9 @@ MonoBehaviour:
   _attackSFX: {fileID: 1085326252}
   _player: {fileID: 530091452}
   _NPC: {fileID: 645139886}
+  _mainCamera: {fileID: 0}
   _power: 10
+  _playerAttack: 0
 --- !u!1 &1208497847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,7 +3555,6 @@ GameObject:
   - component: {fileID: 1214228413}
   - component: {fileID: 1214228419}
   - component: {fileID: 1214228418}
-  - component: {fileID: 1214228420}
   m_Layer: 0
   m_Name: Message
   m_TagString: Untagged
@@ -3728,19 +3706,6 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
---- !u!114 &1214228420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214228412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6a96a1c1431124ea0067561aa73d68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isClicked: 0
 --- !u!1 &1220860503
 GameObject:
   m_ObjectHideFlags: 0
@@ -6813,7 +6778,7 @@ MonoBehaviour:
   _message: {fileID: 0}
   _head: {fileID: 0}
   _warning: {fileID: 0}
-  _clickRaycast: {fileID: 0}
+  _knife: {fileID: 0}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 2053236688}
   _currentActivity: 0
@@ -10656,8 +10621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"_correctTape","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!1 &8622863625282556313
 GameObject:
@@ -11344,7 +11308,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1022283567}
-  - {fileID: 794740963}
   - {fileID: 838512268}
   - {fileID: 1085326253}
   - {fileID: 1898233270}
@@ -11352,6 +11315,7 @@ SceneRoots:
   - {fileID: 1006478129}
   - {fileID: 543450653506164093}
   - {fileID: 530091452}
-  - {fileID: 369112064}
   - {fileID: 293452684}
+  - {fileID: 369112064}
+  - {fileID: 794740963}
   - {fileID: 1233130684}

@@ -22,6 +22,8 @@ public class UI : MonoBehaviour
     public bool _checkMessage = false;
 
     public bool _checkMap = false;
+
+    public bool _checkGlitch = false;
     void Awake()
     {
         _gameover.SetActive(false);
@@ -30,21 +32,27 @@ public class UI : MonoBehaviour
         _EToInteract.SetActive(false);
         _checkMessage = false;
         _checkMap = false;
+        _checkGlitch = false;
     }
 
-    /*public void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && _checkMap == true)
         {
             _map.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && Locator.Instance._clicked._itemDetected == true)
+        if (Input.GetKeyDown(KeyCode.Q) && _checkGlitch == true)
+        {
+            _glitch.SetActive(false);
+        }
+
+        /*if (Input.GetKeyDown(KeyCode.E) && Locator.Instance._clicked._itemDetected == true)
         {
             _EToInteract.SetActive(false);
             Locator.Instance._clicked._itemDetected = false;
-        }
-    }*/
+        }*/
+    }
     
     public void GameOver()
     {
@@ -81,6 +89,7 @@ public class UI : MonoBehaviour
         }*/
 
         _glitch.SetActive(true);
+        _checkGlitch = true;
     }
     public void MessageDisplay()
     {

@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 
     public bool _itemDetected = false;
     public GameObject _trueTapeObj;
+
+    private float _maxDistance = 1.0f;
     
 
     void Start()
@@ -102,10 +104,10 @@ public class Player : MonoBehaviour
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        bool _checkTape = (bool)Variables.Object(_trueTapeObj).Get("_correctTape");
+        bool _checkTape = (bool)Variables.Scene(_trueTapeObj).Get("_correctTape");
         //bool _checkError = (bool)Variables.Object(_falseTapeObj).Get("_falseTape");
         
-        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
+        if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
         {   
             Transform objectHit = _hit.transform;
             //Locator.Instance._ui._EToInteract.SetActive(true);
@@ -113,13 +115,16 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("problem with the logic.");
-                Locator.Instance._ui.MapDisplay();
+                if (_checkTape == true)
+                {
+                    //Debug.Log("problem with the logic.");
+                    Locator.Instance._ui.MapDisplay();
+                }
+                else
+                {
+                    Locator.Instance._ui.GlitchDisplay();
+                }
             }
-        }
-        else
-        {
-            
         }
     }
 
@@ -129,7 +134,7 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("Door"))
+        if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("Door"))
         {
             Transform objectHit = _hit.transform;
             //Locator.Instance._ui._EToInteract.SetActive(true);
@@ -151,7 +156,7 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(_ray, out _hit, 10f) && _hit.collider.gameObject.CompareTag("NPC"))
+        if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("NPC"))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
