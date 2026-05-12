@@ -143,7 +143,6 @@ public class Player : MonoBehaviour
             {
                 //Debug.Log("hit E on " + gameObject.name);
                 //Locator.Instance._ui._EToInteract.SetActive(false);
-                //Locator.Instance._ui.
                 Locator.Instance._door.Escape();
             }
             

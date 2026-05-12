@@ -13,6 +13,7 @@ TagManager:
   - Door
   - True
   - False
+  - Key
   layers:
   - Default
   - TransparentFX
