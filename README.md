@@ -70,6 +70,7 @@ Game items:
 - [Door](https://sketchfab.com/3d-models/door-wooden-old-9mb-77815b3a55504037aa4641eb9650e9de)
 - [Key](https://sketchfab.com/3d-models/door-key-6c692bbf57364804a68d4a6477e788fa#download)
 - [Knife](https://sketchfab.com/3d-models/utility-knife-b56f12426f9d42b6bbbd35726ddd69a3)
+- [Glitch Image](https://pixabay.com/illustrations/glitch-noise-pixel-display-defect-2717634/)
 
 SFX
 - [Attack SFX](https://pixabay.com/sound-effects/film-special-effects-attack-sound-3-384911/)
