@@ -13,6 +13,8 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject _message;
 
+    [SerializeField] GameObject _glitch;
+
     [SerializeField] public GameObject _EToInteract;
 
     [SerializeField] GameObject _gamewin;
@@ -72,6 +74,14 @@ public class UI : MonoBehaviour
         _checkMap = true;
     }
 
+    public void GlitchDisplay()
+    {
+        /*if (Locator.Instance._cassette._isTrueCassette == true)
+        {
+        }*/
+
+        _glitch.SetActive(true);
+    }
     public void MessageDisplay()
     {
         _message.SetActive(true);

@@ -14,13 +14,17 @@ public class Knife : Items
 
     [SerializeField] Transform _NPC;
 
+    [SerializeField] Camera _mainCamera;
     public float _power = 10f;
+
+    public bool _playerAttack = false;
 
 
     void Start()
     {
         //gameObject.SetActive(false);
         _hasKnife = false;
+        _playerAttack = false;
     }
 
     public override void OnMouseDown()
@@ -37,6 +41,21 @@ public class Knife : Items
             Vector3 _attack = (_NPC.transform.position - _player.transform.position).normalized;
             _NPCrb.AddForce(_attack * _power, ForceMode.Impulse);
             _attackSFX.Play(0);
+        }
+    }
+
+    public void InteractionE_Knife()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 10f) && _hit.collider.gameObject.CompareTag("NPC"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                AttackwKnife();
+                _playerAttack = true;
+            }
         }
     }
 }

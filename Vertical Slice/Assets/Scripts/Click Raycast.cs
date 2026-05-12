@@ -10,7 +10,7 @@ public class ClickRaycast : MonoBehaviour
 
     public bool _itemDetected = false;
 
-    public bool _playerAttack = false;
+    //public bool _playerAttack = false;
 
     public bool _trueTape = false;
 
@@ -18,13 +18,13 @@ public class ClickRaycast : MonoBehaviour
 
     public GameObject _trueTapeObj;
 
-    public GameObject _falseTapeObj;
+    //public GameObject _falseTapeObj;
 
     void Start()
     {
         _itemDetected = false;
 
-        _playerAttack = false;
+        //_playerAttack = false;
 
         _trueTape = false;
 
@@ -34,13 +34,14 @@ public class ClickRaycast : MonoBehaviour
 
     void Update()
     {  
-        scope.Get("name");
-        bool _correctTape = (bool)Variables.Object(TrueTape).Get("_correctTape")
+        
     }
     public void InteractionE_Cassette()
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        bool _checkTape = (bool)Variables.Object(_trueTapeObj).Get("_correctTape");
+        //bool _checkError = (bool)Variables.Object(_falseTapeObj).Get("_falseTape");
         
         if (Physics.Raycast(_ray, out _hit) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
         {   
@@ -50,10 +51,15 @@ public class ClickRaycast : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if ()
-                Locator.Instance._ui.MapDisplay();
-                
+                Debug.Log("E is pressed");
+                if (_checkTape == true)
+                {
+                    Debug.Log("problem with the logic.");
+                    Locator.Instance._ui.MapDisplay();
+                }
             }
+
+
         }
         else
         {
@@ -84,7 +90,7 @@ public class ClickRaycast : MonoBehaviour
         }
     }
 
-    public void InteractionE_Knife()
+    /*public void InteractionE_Knife()
     {
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -100,7 +106,7 @@ public class ClickRaycast : MonoBehaviour
                 _playerAttack = true;
             }
         }
-    }
+    }*/
 
     /*public virtual void InteractionE()
     {
