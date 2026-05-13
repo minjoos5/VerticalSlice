@@ -56,7 +56,7 @@ The breakdown helped me a lot while I was working on Milestone 2, as I was able 
 
 The NPC.cs script includes a raycast for sight detection, a distance calculation method, and two boolean variables to control the NPC’s movement. These methods and variables are used in the scripting graph to trigger transitions between the NPC’s animations. On update, the NPC detects the player. If the player is detected by the NPC’s raycast, it will calculate the distance. Based on the distance between the player and the NPC, the proper animation will be triggered and show the transition between two different animations.
 ### Answer 4:
-The Unity system I want checked is the NPC's Navmesh. 
+The Unity system I want checked is the NPC's Navmesh & Navmesh bake of the map. 
 
 
 ## Milestone 3 Devlog
