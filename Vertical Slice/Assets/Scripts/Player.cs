@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         InteractionE_Cassette();
         InteractionE_Door();
         InteractionE_Knife();
+        InteractionE_Inst();
 
         Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
     }
@@ -171,6 +172,31 @@ public class Player : MonoBehaviour
                 Variables.Scene(_npcObj).Set("_playerAttack", true);
                 Locator.Instance._knife.AttackwKnife();
             }
+        }
+    }
+
+    public void InteractionE_Inst()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        
+        if (Physics.Raycast(_ray, out _hit, _maxDistance))
+        {
+            Debug.DrawRay(_mainCamera.transform.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.red);
+
+            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer"))
+            {
+                Locator.Instance._ui._EToInteract.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Locator.Instance._ui._EToInteract.SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            Locator.Instance._ui._EToInteract.SetActive(false);
         }
     }
     
