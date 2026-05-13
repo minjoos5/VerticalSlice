@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         bool _checkTape = (bool)Variables.Scene(_trueTapeObj).Get("_correctTape");
+        bool _pickedTape = (bool)Variables.Scene(_trueTapeObj).Get("_pickedTape");
         //bool _checkError = (bool)Variables.Object(_falseTapeObj).Get("_falseTape");
         
         if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("CassettePlayer"))
@@ -124,9 +125,13 @@ public class Player : MonoBehaviour
                     //Debug.Log("problem with the logic.");
                     Locator.Instance._ui.MapDisplay();
                 }
+                else if (_pickedTape == true)
+                {
+                    Locator.Instance._ui.ShowGlitchDisplay();
+                }
                 else
                 {
-                    Locator.Instance._ui.GlitchDisplay();
+                    Locator.Instance._ui.ShowEmptyDisplay();
                 }
             }
         }

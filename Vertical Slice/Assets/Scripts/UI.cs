@@ -19,6 +19,8 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject _gamewin;
 
+    [SerializeField] GameObject _empty;
+
     public bool _checkMessage = false;
 
     public bool _checkMap = false;
@@ -30,9 +32,20 @@ public class UI : MonoBehaviour
         _message.SetActive(false);
         _map.SetActive(false);
         _EToInteract.SetActive(false);
+        _empty.SetActive(false);
         _checkMessage = false;
         _checkMap = false;
         _checkGlitch = false;
+    }
+
+    public void ShowEmptyDisplay()
+    {
+        StartCoroutine(EmptyDisplay());
+    }
+
+    public void ShowGlitchDisplay()
+    {
+        StartCoroutine(GlitchDisplay());
     }
 
     public void Update()
@@ -82,7 +95,14 @@ public class UI : MonoBehaviour
         _checkMap = true;
     }
 
-    public void GlitchDisplay()
+    public IEnumerator EmptyDisplay()
+    {
+        _empty.SetActive(true);
+        yield return new WaitForSeconds (1.5f);
+        _empty.SetActive(false);
+    }
+
+    public IEnumerator GlitchDisplay()
     {
         /*if (Locator.Instance._cassette._isTrueCassette == true)
         {
@@ -90,6 +110,9 @@ public class UI : MonoBehaviour
 
         _glitch.SetActive(true);
         _checkGlitch = true;
+        yield return new WaitForSeconds (1.5f);
+        _glitch.SetActive(false);
+        
     }
     public void MessageDisplay()
     {

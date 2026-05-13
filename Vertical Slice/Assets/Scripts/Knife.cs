@@ -15,7 +15,7 @@ public class Knife : Items
     [SerializeField] Transform _NPC;
 
     [SerializeField] Camera _mainCamera;
-    public float _power = 10f;
+    public float _power = 15f;
 
     //public bool _playerAttack = false;
 
