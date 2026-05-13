@@ -31,7 +31,7 @@ For my updated breakdown, I added the state machine graph with a brief explanati
 This animation is related to the player’s death/active status. The UI shows a game-over screen when the player is attacked by the NPC. The UI screen will show up when the player’s collider collides with the NPC’s collider, whose current state is “attack.” Since the calculation is based on the distance between them, the game-over screen will show up, though the attack animation is not played. (This happens when the player collides with the NPC so fast.) The state machine is directly related to the gameover UI.
 
 ## Milestone 2 Devlog
-### Answer 1
+### Answer 1:
 Breakdown: implementation of random cassette tapes
 ! I implemented this feature before (prefab), but because it caused too many errors in the game, so I’m replacing it. !
 
@@ -49,14 +49,16 @@ Breakdown: implementation of random cassette tapes
     - The image of the glitch (fake tape)
 
    
-### Answer 2
+### Answer 2:
 The breakdown helped me a lot while I was working on Milestone 2, as I was able to create self-instructions and check my process against them. Although I prepared a diagram breakdown for Milestone 1, I couldn’t make clear connections between various game objects and their scripts. Thus, I had to reorganize most of the code and remove unnecessary scripts (graphs). The new breakdown was much easier to review and make revisions based on my current progress. If I’m doing this again, I want to improve the documentation and add a whiteboard to visualize the game objects and scripts, so I can check how the code is connected and how it works in the game. I think it would be better to add documentation for the shared variables or locator settings to help identify which variable is used at a specific point in the script.
-### Answer 3
+### Answer 3:
 <img width="1517" height="719" alt="screenshot milestone 2" src="https://github.com/user-attachments/assets/2b0c4d9a-79d6-423b-b7e0-02a3099332e9" />
 
 The NPC.cs script includes a raycast for sight detection, a distance calculation method, and two boolean variables to control the NPC’s movement. These methods and variables are used in the scripting graph to trigger transitions between the NPC’s animations. On update, the NPC detects the player. If the player is detected by the NPC’s raycast, it will calculate the distance. Based on the distance between the player and the NPC, the proper animation will be triggered and show the transition between two different animations.
-### Answer 4
+### Answer 4:
 The Unity system I want checked is the NPC's Navmesh. 
+
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
