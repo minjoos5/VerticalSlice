@@ -35,19 +35,28 @@ This animation is related to the player’s death/active status. The UI shows a 
 Breakdown: implementation of random cassette tapes
 ! I implemented this feature before (prefab), but because it caused too many errors in the game, so I’m replacing it. !
 
-- Randomly spawn cassette tapes
+1. Randomly spawn cassette tapes
   - Create three different cassettes with different names (1 true tape & 2 fake tapes)
   - Allocate each game object in the list of item scripts
-  - The code will shuffle the list of locations (empty game objects that are located randomly around the map).
-  - The items are located at one of the random spawn points in the map.
-- For each tape, the Update method will check the current status of the boolean value and update it based on the interaction with the player.
-  - Define the Boolean variable to trigger the interaction between the cassette tape and the correct cassette tape.
-  - Boolean variable declared in the graph → checks the cassette status
+  - The code will shuffle the list of locations (empty game objects that are located randomly around the map). The code was written for Milestone 1.
+  - The items are located at one of the random spawn points in the map. For each tape, the Update method checks the current boolean value and updates it based on player interaction.
+  - Put two different types of scripting graphs in each tape to ensure the UI game object's Boolean value.
+2. Define the Boolean variable to trigger the interaction between the cassette tape and the correct cassette tape.
+  - Boolean variable declared in the graph → checks the cassette status.
   - If the player picks up the correct cassette, the graph of the correct cassette will set the boolean value true.
-  - Based on the Boolean value, the cassette player will play two different images
+  - Based on the Boolean value, the cassette player will play two different images.
     - The image of the map (correct tape)
     - The image of the glitch (fake tape)
 
+   
+### Answer 2
+The breakdown helped me a lot while I was working on Milestone 2, as I was able to create self-instructions and check my process against them. Although I prepared a diagram breakdown for Milestone 1, I couldn’t make clear connections between various game objects and their scripts. Thus, I had to reorganize most of the code and remove unnecessary scripts (graphs). The new breakdown was much easier to review and make revisions based on my current progress. If I’m doing this again, I want to improve the documentation and add a whiteboard to visualize the game objects and scripts, so I can check how the code is connected and how it works in the game. I think it would be better to add documentation for the shared variables or locator settings to help identify which variable is used at a specific point in the script.
+### Answer 3
+<img width="1517" height="719" alt="screenshot milestone 2" src="https://github.com/user-attachments/assets/2b0c4d9a-79d6-423b-b7e0-02a3099332e9" />
+
+The NPC.cs script includes a raycast for sight detection, a distance calculation method, and two boolean variables to control the NPC’s movement. These methods and variables are used in the scripting graph to trigger transitions between the NPC’s animations. On update, the NPC detects the player. If the player is detected by the NPC’s raycast, it will calculate the distance. Based on the distance between the player and the NPC, the proper animation will be triggered and show the transition between two different animations.
+### Answer 4
+The Unity system I want checked is the NPC's Navmesh. 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
