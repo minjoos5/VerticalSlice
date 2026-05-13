@@ -24,6 +24,13 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public AudioSource _warning;
 
+    [SerializeField] public AudioSource _knifesfx;
+
+    [SerializeField] public AudioSource _walkingsfx;
+
+    [SerializeField] public AudioSource _runningsfx;
+
+
     [SerializeField] public Player _playerClass;
     public GameObject _playerPos;
     public GameObject _NPCPos;
@@ -77,9 +84,14 @@ public class NPC : MonoBehaviour
 
             if (_hit.collider.gameObject.CompareTag("Player"))// && _warning.isPlaying == false)
             {
-                _warning.Play();
-                //Debug.Log("Sound is playing");
                 _isDetected = true;
+                if (_warning.isPlaying == false)
+                {
+                    _warning.Play();
+                }
+                //_warning.Play();
+                //Debug.Log("Sound is playing");
+                
                 //Debug.Log("Hitting Now");
             }
             else
@@ -102,6 +114,11 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", false);
         _animator.SetBool("Hit", false);
         _isAttacking = false;
+
+        /*if (_runningsfx.isPlaying == false)
+        {
+            _runningsfx.Play();
+        }*/
     }
     // declared in graph
 
@@ -115,6 +132,11 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", false);
         _animator.SetBool("Hit", false);
         _isAttacking = true;
+
+        /*if (_knifesfx.isPlaying == false)
+        {
+            _knifesfx.Play();
+        }*/
     }
     // declared in graph
     
@@ -128,6 +150,11 @@ public class NPC : MonoBehaviour
         _animator.SetBool("isWalking", true);
         _animator.SetBool("Hit", false);
         _isAttacking = false;
+
+        /*if (_walkingsfx.isPlaying == false)
+        {
+            _walkingsfx.Play();
+        }*/
     }
 
     public void HitAnimation()
