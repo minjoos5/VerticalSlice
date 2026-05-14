@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     private float _maxDistance = 1.0f;
 
     public GameObject _npcObj;
+
+    public bool _tired = false;
     
 
     void Start()
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
         _rb = this.GetComponent<Rigidbody>();
         _itemDetected = false;
+        
 
     }
         
@@ -87,22 +90,38 @@ public class Player : MonoBehaviour
         
         //_rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
-        if (Input.GetKey(KeyCode.Space) && _staminaBase > _minStamina)
+        if (Input.GetKey(KeyCode.Space) && _staminaBase > _maxStamina * 0.5f)
         {
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase -= _staminaDecrease * Time.deltaTime;
             //Debug.Log("current speed: " + _runSpeed);
         }
+        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.3f)
+        {
+            _movement = transform.TransformDirection(_playerMovement) * _speed;
+            _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+            _staminaBase -= _staminaDecrease * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.5f)
+        {
+            _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
+            _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
+            _staminaBase -= _staminaDecrease * Time.deltaTime;
+            //Debug.Log("current speed: " + _speed);
+        }
         else
         {
             _movement = transform.TransformDirection(_playerMovement) * _speed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase += _staminaIncrease * Time.deltaTime;
-            //Debug.Log("current speed: " + _speed);
         }
+    }
 
-        // look for unity clamp documentation
+    public IEnumerator noHP()
+    {
+        yield return new WaitForSeconds (5f);
+        _tired = false;
     }
 
     public void InteractionE_Cassette()
