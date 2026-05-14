@@ -1394,8 +1394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2.5
-  _runSpeed: 8
-  _mouseSensitivity: 200
+  _runSpeed: 5
+  _mouseSensitivity: 100
   _collider: {fileID: 530091449}
   _mainCamera: {fileID: 1480751161}
   _noEnergy: 0
@@ -1407,6 +1407,8 @@ MonoBehaviour:
   _itemDetected: 0
   _trueTapeObj: {fileID: 3672354366859014148}
   _npcObj: {fileID: 645139876}
+  _tired: 0
+  _slowSpeed: 1
 --- !u!65 &530091454
 BoxCollider:
   m_ObjectHideFlags: 0
