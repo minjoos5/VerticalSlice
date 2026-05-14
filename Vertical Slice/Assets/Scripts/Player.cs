@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             _staminaBase -= _staminaDecrease * Time.deltaTime;
             //Debug.Log("current speed: " + _runSpeed);
         }
-        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.3f)
+        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.1f)
         {
             _movement = transform.TransformDirection(_playerMovement) * _slowSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
