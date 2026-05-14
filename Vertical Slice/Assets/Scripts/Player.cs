@@ -118,11 +118,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator noHP()
+    /*public IEnumerator noHP()
     {
         yield return new WaitForSeconds (5f);
         _tired = false;
-    }
+    }*/
 
     public void InteractionE_Cassette()
     {
