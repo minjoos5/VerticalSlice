@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     public GameObject _npcObj;
 
     public bool _tired = false;
+
+    public float _slowSpeed;
     
 
     void Start()
@@ -99,7 +101,7 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.3f)
         {
-            _movement = transform.TransformDirection(_playerMovement) * _speed;
+            _movement = transform.TransformDirection(_playerMovement) * _slowSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase -= _staminaDecrease * Time.deltaTime;
         }
