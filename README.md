@@ -33,6 +33,8 @@ This animation is related to the player’s death/active status. The UI shows a 
 ## Milestone 2 Devlog
 ### Answer 1:
 Breakdown: implementation of random cassette tapes
+
+
 ! I implemented this feature before (prefab), but because it caused too many errors in the game, so I’m replacing it. !
 
 1. Randomly spawn cassette tapes
