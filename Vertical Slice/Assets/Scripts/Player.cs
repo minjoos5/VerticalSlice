@@ -92,20 +92,20 @@ public class Player : MonoBehaviour
         
         //_rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
 
-        if (Input.GetKey(KeyCode.Space) && _staminaBase > _maxStamina * 0.5f)
+        if (Input.GetKey(KeyCode.LeftShift) && _staminaBase > _maxStamina * 0.5f)
         {
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase -= _staminaDecrease * Time.deltaTime;
             //Debug.Log("current speed: " + _runSpeed);
         }
-        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.1f)
+        else if (Input.GetKey(KeyCode.LeftShift) && _staminaBase <= _maxStamina * 0.1f)
         {
             _movement = transform.TransformDirection(_playerMovement) * _slowSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
             _staminaBase -= _staminaDecrease * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.Space) && _staminaBase <= _maxStamina * 0.5f)
+        else if (Input.GetKey(KeyCode.LeftShift) && _staminaBase <= _maxStamina * 0.5f)
         {
             _movement = transform.TransformDirection(_playerMovement) * _runSpeed;
             _rb.velocity = new Vector3 (_movement.x, _rb.velocity.y, _movement.z);
