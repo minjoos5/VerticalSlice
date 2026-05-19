@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         InteractionE_Knife();
         InteractionE_Inst();
 
-        Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
+        //Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
     }
 
     private void playerMovement()

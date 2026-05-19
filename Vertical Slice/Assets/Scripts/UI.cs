@@ -56,6 +56,12 @@ public class UI : MonoBehaviour
 
     public void Update()
     {
+        if (Locator.Instance._diaManage._gameStart == true)
+        {
+            _crosshair.SetActive(true);
+            _staminaBar.SetActive(true);
+        }
+        
         if (Input.GetKeyDown(KeyCode.Q) && _checkMap == true)
         {
             _map.SetActive(false);
@@ -75,7 +81,7 @@ public class UI : MonoBehaviour
     
     public void GameOver()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
         _gameover.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

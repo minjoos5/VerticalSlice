@@ -39,6 +39,7 @@ public class Locator : MonoBehaviour
 
     public Blink _blink;
     
+    public DialogueManager _diaManage;
     //public Cassette _cassette;
 
 }

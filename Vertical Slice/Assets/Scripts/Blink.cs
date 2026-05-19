@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Blink : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class Blink : MonoBehaviour
 
     public void Start()
     {
-        
         StartCoroutine(eyeBlink());
     }
 
@@ -27,7 +27,7 @@ public class Blink : MonoBehaviour
 
     public IEnumerator BlinkTime()
     {
-        for (int i = 0; i <= 10; i++)
+        for (int i = 0; i <= 3; i++)
         {
             yield return eyeBlink();
         }

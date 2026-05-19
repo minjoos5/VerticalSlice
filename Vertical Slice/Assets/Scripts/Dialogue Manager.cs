@@ -15,10 +15,13 @@ public class DialogueManager : MonoBehaviour
 
     private Monologue _currentNode;
 
+    public bool _gameStart;
+
     // Start is called before the first frame update
     void Awake()
     {
         _currentLine = 0;
+        _gameStart = false;
     }
 
     // Update is called once per frame
@@ -39,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue ()
     {
         _currentLine = 0;
+        _gameStart = true;
         gameObject.SetActive(false);
         
     }
