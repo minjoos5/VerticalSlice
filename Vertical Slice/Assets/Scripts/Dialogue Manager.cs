@@ -15,11 +15,10 @@ public class DialogueManager : MonoBehaviour
 
     private Monologue _currentNode;
 
-    private int _index = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        _currentLine = 0;
     }
 
     // Update is called once per frame
@@ -40,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue ()
     {
         _currentLine = 0;
-        _playerDialogue.SetActive(false);
+        gameObject.SetActive(false);
         
     }
     void NextLine()
@@ -48,7 +47,7 @@ public class DialogueManager : MonoBehaviour
         if(_currentLine < _scriptableObj._lines.Length)
         {
             // if we still have NPC lines left, keep playing NPC lines
-            ShowLines(_currentNode._lines[_currentLine]);
+            ShowLines(_scriptableObj._lines[_currentLine]);
             _currentLine++;
         }
         else 
