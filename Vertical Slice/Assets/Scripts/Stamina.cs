@@ -7,6 +7,7 @@ public class Stamina : MonoBehaviour
 {
     [SerializeField] public Slider _staminaSlider;
 
+
     public void UIupdate (float _currentStamina, float _maximum)
     {
         _staminaSlider.value = _currentStamina / _maximum;

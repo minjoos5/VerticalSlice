@@ -22,7 +22,7 @@ public class Locator : MonoBehaviour
     public Player _player;
     public Items _items;
     public NPC _NPC;
-    public ClickRaycast _clicked;
+    //public ClickRaycast _clicked;
     public UI _ui;
 
     public CassettePlayer _cassPl;
@@ -31,11 +31,13 @@ public class Locator : MonoBehaviour
 
     public Knife _knife;
 
-    public Key _key;
+    //public Key _key;
 
-    public Message _message;
+    //public Message _message;
 
     public Stamina _stamina;
+
+    public Blink _blink;
     
     //public Cassette _cassette;
 

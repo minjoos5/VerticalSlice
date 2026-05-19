@@ -21,6 +21,9 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject _empty;
 
+    [SerializeField] GameObject _staminaBar;
+
+    [SerializeField] GameObject _crosshair;
     public bool _checkMessage = false;
 
     public bool _checkMap = false;
@@ -33,9 +36,12 @@ public class UI : MonoBehaviour
         _map.SetActive(false);
         _EToInteract.SetActive(false);
         _empty.SetActive(false);
+        _staminaBar.SetActive(false);
+        _crosshair.SetActive(false);
         _checkMessage = false;
         _checkMap = false;
         _checkGlitch = false;
+        
     }
 
     public void ShowEmptyDisplay()
