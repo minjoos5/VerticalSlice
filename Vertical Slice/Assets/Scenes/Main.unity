@@ -1824,9 +1824,6 @@ MonoBehaviour:
   _message: {fileID: 1214228412}
   _head: {fileID: 385201076}
   _warning: {fileID: 645139887}
-  _knifesfx: {fileID: 645139888}
-  _walkingsfx: {fileID: 645139890}
-  _runningsfx: {fileID: 645139889}
   _playerClass: {fileID: 530091453}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 645139876}
@@ -1992,7 +1989,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645139876}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a2701dd0d244d7443929b496214f2280, type: 3}
@@ -2088,7 +2085,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645139876}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63ac0cc6c2209984aa15014e3e3677cf, type: 3}
@@ -2198,7 +2195,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2263,7 +2260,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4852,8 +4849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1361334463}
-  _minTime: 0.5
-  _maxTime: 2
+  _minTime: 0.1
+  _maxTime: 0.5
   _progress: 1
 --- !u!114 &1361334460
 MonoBehaviour:
@@ -8009,9 +8006,6 @@ MonoBehaviour:
   _message: {fileID: 0}
   _head: {fileID: 0}
   _warning: {fileID: 0}
-  _knifesfx: {fileID: 0}
-  _walkingsfx: {fileID: 0}
-  _runningsfx: {fileID: 0}
   _playerClass: {fileID: 0}
   _playerPos: {fileID: 530091446}
   _NPCPos: {fileID: 2053236688}

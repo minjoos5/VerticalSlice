@@ -27,9 +27,9 @@ public class Blink : MonoBehaviour
     }
     public IEnumerator eyeBlink()
     {
-        _animator.SetBool("isBlinking", false);
-        yield return new WaitForSeconds (Random.Range(_minTime,_maxTime));
         _animator.SetBool("isBlinking", true);
+        yield return new WaitForSeconds (Random.Range(_minTime,_maxTime));
+        _animator.SetBool("isBlinking", false);
     }
 
     public IEnumerator BlinkTime()
