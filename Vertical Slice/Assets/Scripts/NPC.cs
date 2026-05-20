@@ -24,11 +24,11 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public AudioSource _warning;
 
-    [SerializeField] public AudioSource _knifesfx;
+    //[SerializeField] public AudioSource _knifesfx;
 
-    [SerializeField] public AudioSource _walkingsfx;
+    //[SerializeField] public AudioSource _walkingsfx;
 
-    [SerializeField] public AudioSource _runningsfx;
+    //[SerializeField] public AudioSource _runningsfx;
 
 
     [SerializeField] public Player _playerClass;
@@ -46,13 +46,29 @@ public class NPC : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        
         //gameObject.SetActive(false);
     }
 
-    public void Start()
+    void Start()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
+
+
+    /*void Start()
+    {
+        StartCoroutine(StartNPC());
+    }
+
+    public IEnumerator StartNPC()
+    {
+        Debug.Log("disabled");
+        
+        yield return new WaitUntil(() => Locator.Instance._diaManage._gameStart == true);
+        
+        Debug.Log("npc activated");
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -115,9 +131,15 @@ public class NPC : MonoBehaviour
         _animator.SetBool("Hit", false);
         _isAttacking = false;
 
-        /*if (_runningsfx.isPlaying == false)
+        
+
+        /*if (_animator.GetBool("isChasing") == true)
         {
             _runningsfx.Play();
+        }
+        else
+        {
+            _runningsfx.Stop();
         }*/
     }
     // declared in graph
@@ -133,9 +155,13 @@ public class NPC : MonoBehaviour
         _animator.SetBool("Hit", false);
         _isAttacking = true;
 
-        /*if (_knifesfx.isPlaying == false)
+        /*if (_animator.GetBool("isAttacking") == true)
         {
             _knifesfx.Play();
+        }
+        else
+        {
+            _knifesfx.Stop();
         }*/
     }
     // declared in graph
@@ -151,10 +177,15 @@ public class NPC : MonoBehaviour
         _animator.SetBool("Hit", false);
         _isAttacking = false;
 
-        /*if (_walkingsfx.isPlaying == false)
+        /*if (_animator.GetBool("isWalking") == true)
         {
             _walkingsfx.Play();
+        }
+        else
+        {
+            _walkingsfx.Stop();
         }*/
+        
     }
 
     public void HitAnimation()

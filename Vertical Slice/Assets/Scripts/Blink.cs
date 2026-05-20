@@ -15,9 +15,16 @@ public class Blink : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(eyeBlink());
+        StartCoroutine(BlinkTime());
     }
 
+    public void Update()
+    {
+        if (Locator.Instance._diaManage._gameStart == true)
+        {
+            _animator.SetBool("isBlinking", false);
+        }
+    }
     public IEnumerator eyeBlink()
     {
         _animator.SetBool("isBlinking", false);
@@ -27,7 +34,8 @@ public class Blink : MonoBehaviour
 
     public IEnumerator BlinkTime()
     {
-        for (int i = 0; i <= 3; i++)
+        _animator.SetBool("openEye", true);
+        for (int i = 0; i <= 5; i++)
         {
             yield return eyeBlink();
         }

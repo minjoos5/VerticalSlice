@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject _playerDialogue;
     [SerializeField] private Monologue _scriptableObj;
 
+    [SerializeField] public GameObject _npcObj;
+
     private int _currentLine = 0;
 
     private Monologue _currentNode;
@@ -44,6 +46,9 @@ public class DialogueManager : MonoBehaviour
         _currentLine = 0;
         _gameStart = true;
         gameObject.SetActive(false);
+        //Debug.Log(_gameStart);
+        _npcObj.SetActive(true);
+        
         
     }
     void NextLine()
