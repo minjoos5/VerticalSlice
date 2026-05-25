@@ -72,6 +72,11 @@ public class UI : MonoBehaviour
             _glitch.SetActive(false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab) && _checkMap == true)
+        {
+            _map.SetActive(true);
+        }
+
         /*if (Input.GetKeyDown(KeyCode.E) && Locator.Instance._clicked._itemDetected == true)
         {
             _EToInteract.SetActive(false);
