@@ -24,6 +24,8 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject _staminaBar;
 
     [SerializeField] GameObject _crosshair;
+
+    [SerializeField] public GameObject _clickToInteract;
     public bool _checkMessage = false;
 
     public bool _checkMap = false;
@@ -41,6 +43,7 @@ public class UI : MonoBehaviour
         _checkMessage = false;
         _checkMap = false;
         _checkGlitch = false;
+        _clickToInteract.SetActive(false);
         
     }
 
