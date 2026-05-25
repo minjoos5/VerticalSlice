@@ -22,7 +22,7 @@ public class Items : MonoBehaviour
     void Awake()
     {
 
-        _playerTransform = GameObject.Find("Player Capsule").transform;
+        //_playerTransform = GameObject.Find("Player Capsule").transform;
 
         foreach (GameObject _spot in _location)
         {

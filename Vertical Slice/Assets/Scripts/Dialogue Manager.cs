@@ -13,6 +13,10 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] public GameObject _npcObj;
 
+    [SerializeField] public GameObject _playerObj;
+
+    [SerializeField] public GameObject _introCam;
+
     private int _currentLine = 0;
 
     private Monologue _currentNode;
@@ -24,6 +28,8 @@ public class DialogueManager : MonoBehaviour
     {
         _currentLine = 0;
         _gameStart = false;
+        _playerObj.SetActive(false);
+        _introCam.SetActive(true);
     }
 
     // Update is called once per frame
@@ -52,7 +58,8 @@ public class DialogueManager : MonoBehaviour
         gameObject.SetActive(false);
         //Debug.Log(_gameStart);
         _npcObj.SetActive(true);
-        
+        _playerObj.SetActive(true);
+        _introCam.SetActive(false);
         
     }
     void NextLine()
