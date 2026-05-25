@@ -15,6 +15,8 @@ public class Knife : Items
     [SerializeField] Transform _NPC;
 
     [SerializeField] Camera _mainCamera;
+
+    [SerializeField] GameObject _handKnife;
     public float _power = 300f;
 
     //public bool _playerAttack = false;
@@ -24,12 +26,14 @@ public class Knife : Items
     {
         //gameObject.SetActive(false);
         _hasKnife = false;
+        _handKnife.SetActive(false);
     }
 
     public override void OnMouseDown()
     {
         _hasKnife = true;
         gameObject.SetActive(false);
+        _handKnife.SetActive(true);
     }
 
     public void AttackwKnife()

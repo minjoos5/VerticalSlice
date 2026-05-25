@@ -33,6 +33,10 @@ public class DialogueManager : MonoBehaviour
         {
             NextLine();
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            EndDialogue();
+        }
     }
 
     public void ShowLines(string dialogue)
