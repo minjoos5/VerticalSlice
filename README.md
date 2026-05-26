@@ -70,6 +70,7 @@ Final Devlog goes here.
 ## Open-source assets
 
 [Backroom asset](https://sketchfab.com/3d-models/backrooms-1da6a7f2e0294ba9a4123f61244811a8)
+[Backroom asset 2](https://sketchfab.com/3d-models/backrooms-another-level-429f3c9ea8024f5e9bb78f6649c7bd26)
 
 
 [NPC Model](https://www.mixamo.com/#/?page=1&query=run&type=Motion%2CMotionPack)
