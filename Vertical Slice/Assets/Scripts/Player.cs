@@ -38,9 +38,15 @@ public class Player : MonoBehaviour
 
     public GameObject _npcObj;
 
+    public GameObject _key;
+
     public bool _tired = false;
 
     public float _slowSpeed;
+
+    public bool _keyActive;
+
+    public bool _gotKey;
     
 
     void Start()
@@ -52,8 +58,8 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
         _rb = this.GetComponent<Rigidbody>();
         _itemDetected = false;
-        
-
+        _keyActive = false;
+        _gotKey = false;
     }
         
     void Update()
@@ -76,12 +82,13 @@ public class Player : MonoBehaviour
 
         playerMovement();
 
+        KeySpawn();
+
         InteractionE_Cassette();
         InteractionE_Door();
         InteractionE_Knife();
         InteractionE_Inst();
         Interaction_click();
-
         //Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
     }
 
@@ -121,11 +128,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*public IEnumerator noHP()
+    public void KeySpawn()
     {
-        yield return new WaitForSeconds (5f);
-        _tired = false;
-    }*/
+        _keyActive = (bool)Variables.Scene(_key).Get("_correctTape");
+        _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
+        Debug.Log("_keyActive: " + _keyActive);
+
+        if (_keyActive == true  && _gotKey == true)
+        {
+            _key.SetActive(false);
+        }
+        else if (_keyActive == true)
+        {
+            _key.SetActive(true);
+        }
+    }
 
     public void Interaction_click()
     {

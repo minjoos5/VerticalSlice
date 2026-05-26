@@ -47,16 +47,4 @@ public class ItemsLevel2 : MonoBehaviour
         Debug.Log("clicked!");
         gameObject.SetActive(false);
     }
-
-        /*public void Update()
-    {
-        InheritUpdate();
-    }
-
-    public virtual void InheritUpdate()
-    {
-        Locator.Instance._player.InteractionE_Cassette();
-        Locator.Instance._player.InteractionE_Door();
-        Locator.Instance._knife.InteractionE_Knife();
-    }*/
 }

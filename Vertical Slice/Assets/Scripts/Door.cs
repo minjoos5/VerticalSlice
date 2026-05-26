@@ -10,6 +10,8 @@ public class Door : Items
 
     public bool _readyToEscape;
 
+    public Transform _playerTrans;
+
     public void Start()
     {
         //bool _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
@@ -25,7 +27,8 @@ public class Door : Items
     {
         if (_readyToEscape == true)
         {
-            Locator.Instance._ui.GameWin();
+            //Locator.Instance._ui.GameWin();
+            _playerTrans.position = new Vector3 (28f, 1f, -9f);
         }
     }
 
