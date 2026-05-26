@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Items : MonoBehaviour
+public class ItemsLevel2 : MonoBehaviour
 {
     // the list of items: key, cassette tape, cassette tape;
     // the item disappears when the player picks it up
