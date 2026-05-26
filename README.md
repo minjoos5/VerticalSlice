@@ -63,8 +63,7 @@ The Unity system I want checked is the NPC's Navmesh: the navigation AI of the N
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
-## Milestone 4 Devlog
-Milestone 4 Devlog goes here.
+
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
