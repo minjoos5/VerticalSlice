@@ -33,6 +33,8 @@ public class Locator : MonoBehaviour
 
     public Knife _knife;
 
+    public Crowbar _cb;
+
     //public Key _key;
 
     //public Message _message;
