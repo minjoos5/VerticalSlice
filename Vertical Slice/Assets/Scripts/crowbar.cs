@@ -15,7 +15,9 @@ public class Crowbar : MonoBehaviour
 
     [SerializeField] Transform _player;
 
-    [SerializeField] Transform _NPCL2;
+    [SerializeField] Transform _NPCL2trans;
+
+    [SerializeField] GameObject _NPCL2;
 
     [SerializeField] Camera _mainCamera;
 
@@ -36,30 +38,6 @@ public class Crowbar : MonoBehaviour
         _hasCB = (bool)Variables.Scene(_handCB).Get("_gotCB");
     }
 
-    /*public void UseCrowbar()
-    {
-        RaycastHit _hit;
-        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        
-        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("NPC") && Locator.Instance._cb._hasCB == true)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Variables.Scene(_handCB).Set("_playerAttack", true);
-                AttackwCB();
-            }
-        }
-
-        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("Lift") && Locator.Instance._cb._hasCB == true)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                AttackwCB();
-            }
-        }
-    }*/
-
-
     public void AttackwCB()
     {
         if (_hasCB == true)
@@ -69,12 +47,38 @@ public class Crowbar : MonoBehaviour
             _attackSFX.Play(0);
         }
     }
-    public void IdleAnimation()
+
+    /*public void UseCrowbar()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("NPC") && Locator.Instance._cb._hasCB == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Variables.Scene(_NPCL2).Set("_playerAttack", true);
+                AttackwCB();
+            }
+        }
+
+        /*if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("Lift") && Locator.Instance._cb._hasCB == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                AttackwCB();
+            }
+        }
+    }
+
+
+    
+    /*public void IdleAnimation()
     {
         _animator.SetBool("isUsing", false);
     }
     public void UsingAnimation()
     {
         _animator.SetBool("isUsing", true);
-    }
+    }*/
 }

@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
 
     public GameObject _npcObj;
 
+    public GameObject _npcl2Obj;
+
     public GameObject _key;
 
     public GameObject _handKnife;
@@ -91,6 +93,7 @@ public class Player : MonoBehaviour
         InteractionE_Cassette();
         InteractionE_Door();
         InteractionE_Knife();
+        InteractionE_CB();
         InteractionE_Inst();
         Interaction_click();
         //Debug.Log((bool)Variables.Scene(_npcObj).Get("_playerAttack"));
@@ -231,6 +234,21 @@ public class Player : MonoBehaviour
             {
                 Variables.Scene(_npcObj).Set("_playerAttack", true);
                 Locator.Instance._knife.AttackwKnife();
+            }
+        }
+    }
+
+    public void InteractionE_CB()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("NPC") && Locator.Instance._cb._hasCB == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Variables.Scene(_npcl2Obj).Set("_playerAttack", true);
+                Locator.Instance._cb.AttackwCB();
             }
         }
     }
