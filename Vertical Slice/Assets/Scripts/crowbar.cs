@@ -36,8 +36,31 @@ public class Crowbar : MonoBehaviour
         _hasCB = (bool)Variables.Scene(_handCB).Get("_gotCB");
     }
 
+    /*public void UseCrowbar()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("NPC") && Locator.Instance._cb._hasCB == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Variables.Scene(_handCB).Set("_playerAttack", true);
+                AttackwCB();
+            }
+        }
 
-    public void AttackwKnife()
+        if (Physics.Raycast(_ray, out _hit, 5f) && _hit.collider.gameObject.CompareTag("Lift") && Locator.Instance._cb._hasCB == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                AttackwCB();
+            }
+        }
+    }*/
+
+
+    public void AttackwCB()
     {
         if (_hasCB == true)
         {
@@ -54,6 +77,4 @@ public class Crowbar : MonoBehaviour
     {
         _animator.SetBool("isUsing", true);
     }
-
-
 }

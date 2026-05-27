@@ -12329,7 +12329,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108504751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efe58df89b5b74a97a123b5ed2b70422, type: 3}
   m_Name: 
@@ -12366,6 +12366,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 2108504752}
+  _hasCB: 0
+  _NPCL2rb: {fileID: 1557237279}
+  _attackSFX: {fileID: 1085326252}
+  _player: {fileID: 530091452}
+  _NPCL2: {fileID: 1557237285}
+  _mainCamera: {fileID: 1480751161}
+  _handCB: {fileID: 2108504751}
+  _power: 300
 --- !u!1 &2116404626
 GameObject:
   m_ObjectHideFlags: 0
