@@ -40,6 +40,10 @@ public class Player : MonoBehaviour
 
     public GameObject _key;
 
+    public GameObject _handKnife;
+    
+    public GameObject _handCB;
+
     public bool _tired = false;
 
     public float _slowSpeed;
@@ -130,7 +134,8 @@ public class Player : MonoBehaviour
 
     public void KeySpawn()
     {
-        _keyActive = (bool)Variables.Scene(_key).Get("_correctTape");
+        _keyActive = Locator.Instance._ui._checkMap;
+        //(bool)Variables.Scene(_key).Get("_correctTape");
         _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
         Debug.Log("_keyActive: " + _keyActive);
 
@@ -149,12 +154,9 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(_ray, out _hit, 5.0f))
+        if (Physics.Raycast(_ray, out _hit, 5.0f) && _hit.collider.gameObject.CompareTag("Item"))
         {
-            if (_hit.collider.gameObject.CompareTag("Item"))
-            {
-                Locator.Instance._ui._clickToInteract.SetActive(true);
-            }
+            Locator.Instance._ui._clickToInteract.SetActive(true);
         }
         else
         {
@@ -211,6 +213,7 @@ public class Player : MonoBehaviour
                 //Debug.Log("hit E on " + gameObject.name);
                 //Locator.Instance._ui._EToInteract.SetActive(false);
                 Locator.Instance._door.Escape();
+                _handKnife.SetActive(false);
             }
             
             

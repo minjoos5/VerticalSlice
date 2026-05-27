@@ -52,39 +52,19 @@ public class NPCL2 : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
-
-
-    /*void Start()
-    {
-        StartCoroutine(StartNPC());
-    }
-
-    public IEnumerator StartNPC()
-    {
-        Debug.Log("disabled");
-        
-        yield return new WaitUntil(() => Locator.Instance._diaManage._gameStart == true);
-        
-        Debug.Log("npc activated");
-    }*/
 
     // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.position);
         SightDetection();
-        //CalculateDistance();
-        //UpdateState();
-        //UpdateAnimation();
-        //_playerAttackNPC = _playerClass._playerAttack;
     }
 
     public void CalculateDistance()
     {
         _distance = Vector3.Distance(_playerPos.transform.position, _NPCPos.transform.position);
-        //Debug.Log(_distance);
     }
 
     public void SightDetection()
@@ -201,41 +181,5 @@ public class NPCL2 : MonoBehaviour
 
         Debug.Log ("Hit animation is playing");
     }
-    // declared in graph
-
-    
-    /*public void UpdateState()
-    {
-        if (_distance >= 4f)
-        {
-            _currentActivity = NPCstate.Walking;
-        }
-        else if (_distance < 4f && _distance > 1f)
-        {
-            _currentActivity = NPCstate.Chasing;
-        }
-        else if (_distance <= 1f)
-        {
-            _currentActivity = NPCstate.Attacking;
-        }
-    }*/
-
-    /*public void UpdateAnimation()
-    {
-        switch (_currentActivity)
-        {
-            case NPCstate.Chasing:
-            ChaseAnimation();
-            break;
-
-            case NPCstate.Attacking:
-            AttackAnimation();
-            break;
-
-            case NPCstate.Walking:
-            WalkAnimation();
-            break;
-        }
-    }*/
 
 }

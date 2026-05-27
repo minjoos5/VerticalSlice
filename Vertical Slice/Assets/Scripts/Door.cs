@@ -28,7 +28,7 @@ public class Door : Items
         if (_readyToEscape == true)
         {
             //Locator.Instance._ui.GameWin();
-            _playerTrans.position = new Vector3 (28f, 1f, -9f);
+            _playerTrans.position = new Vector3 (28f, 2f, -9f);
         }
     }
 
