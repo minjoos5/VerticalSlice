@@ -245,7 +245,7 @@ public class Player : MonoBehaviour
         {
             //Debug.DrawRay(_mainCamera.transform.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.red);
 
-            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer"))
+            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer") || _hit.collider.gameObject.CompareTag("Lift"))
             {
                 Locator.Instance._ui._EToInteract.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
@@ -264,6 +264,12 @@ public class Player : MonoBehaviour
     {
         NPC _npc = collision.gameObject.GetComponent<NPC>();
         if (_npc != null  && Locator.Instance._NPC._isAttacking == true)
+        {
+            Locator.Instance._ui.GameOver();
+        }
+
+        NPCL2 _npcL2 = collision.gameObject.GetComponent<NPCL2>();
+        if (_npcL2 != null  && Locator.Instance._NPCL2._isAttacking == true)
         {
             Locator.Instance._ui.GameOver();
         }

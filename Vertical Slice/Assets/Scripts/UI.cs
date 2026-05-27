@@ -25,6 +25,8 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject _crosshair;
 
+    [SerializeField] GameObject _messageL2; 
+
     [SerializeField] public GameObject _clickToInteract;
     public bool _checkMessage = false;
 

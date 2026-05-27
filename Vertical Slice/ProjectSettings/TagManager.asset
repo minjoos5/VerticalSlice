@@ -15,6 +15,7 @@ TagManager:
   - False
   - Key
   - CB
+  - Lift
   layers:
   - Default
   - TransparentFX
