@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _runSpeed = 10f;
-    [SerializeField] private float _mouseSensitivity = 100f;
+    [SerializeField] private float _mouseSensitivity = 75f;
 
     [SerializeField] private CapsuleCollider _collider;
 
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
 
         InteractionE_Cassette();
         InteractionE_Door();
+        InteractionE_Lift();
         InteractionE_Knife();
         InteractionE_CB();
         InteractionE_Inst();
@@ -223,6 +224,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void InteractionE_Lift()
+    {
+        RaycastHit _hit;
+        Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(_ray, out _hit, _maxDistance) && _hit.collider.gameObject.CompareTag("Lift"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Locator.Instance._lift.EscapeL2();
+            }
+            
+            
+        }
+    }
+
     public void InteractionE_Knife()
     {
         RaycastHit _hit;
@@ -263,7 +280,7 @@ public class Player : MonoBehaviour
         {
             //Debug.DrawRay(_mainCamera.transform.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.red);
 
-            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer") || _hit.collider.gameObject.CompareTag("Lift"))
+            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer") || _hit.collider.gameObject.CompareTag("Lift") || _hit.collider.gameObject.CompareTag("CB"))
             {
                 Locator.Instance._ui._EToInteract.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))

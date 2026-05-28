@@ -2358,7 +2358,7 @@ MonoBehaviour:
   _tired: 0
   _slowSpeed: 1
   _keyActive: 0
-  _gotKey: 0
+  _gotKey: 1
 --- !u!65 &530091454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5223,6 +5223,7 @@ MonoBehaviour:
   _ui: {fileID: 656994462}
   _cassPl: {fileID: 1688551534}
   _door: {fileID: 7416050881621691962}
+  _lift: {fileID: 4678266985387674698}
   _knife: {fileID: 1207668477}
   _cb: {fileID: 2108504755}
   _stamina: {fileID: 370172923}
@@ -14370,6 +14371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422082161811080536}
+  - component: {fileID: 4678266985387674698}
   m_Layer: 0
   m_Name: LiftDoors_4
   m_TagString: Untagged
@@ -14377,6 +14379,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4678266985387674698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678266985387674697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd438dcc023bb614bb4d6a8b39d312f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lift: {fileID: 4335237088752143580}
+  _crowbar: {fileID: 611646974}
+  _readyToEscapeL2: 0
+  _playerTrans: {fileID: 530091452}
 --- !u!4 &4680546475437740132
 Transform:
   m_ObjectHideFlags: 0

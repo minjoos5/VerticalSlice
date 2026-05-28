@@ -31,6 +31,7 @@ public class Locator : MonoBehaviour
 
     public Door _door;
 
+    public Lift _lift;
     public Knife _knife;
 
     public Crowbar _cb;
