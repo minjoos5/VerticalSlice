@@ -3807,7 +3807,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.55
+  m_fontSize: 20.9
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10156,9 +10156,11 @@ MonoBehaviour:
   _scriptableObj: {fileID: 11400000, guid: 5e2f3a7e2e787ef41a61228520a239ff, type: 2}
   _scriptableObjL2: {fileID: 11400000, guid: db66a12a2f36e4e49a782516779cec50, type: 2}
   _npcObj: {fileID: 645139876}
+  _npcL2Obj: {fileID: 919132149481750359}
   _playerObj: {fileID: 530091446}
   _introCam: {fileID: 1123817262}
   _gameStart: 0
+  _l2Start: 0
 --- !u!1 &1750541878
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         _currentLine = 0;
+        _currentLineL2 = 0;
         _gameStart = false;
         _playerObj.SetActive(false);
         _introCam.SetActive(true);
@@ -43,6 +44,13 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("dialogue l2start is " + _l2Start);
+        if (_l2Start == true)
+        {
+            
+            gameObject.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && _gameStart == false)
         {
             NextLine();

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Monologue
   m_EditorClassIdentifier: 
   _lines:
+  - ...
   - Ugh... Where am I?
   - BACKROOMS????
   - I should find some clues to escape from this backroom...
   - (Find useful tools to escape from the backroom)
+  - 

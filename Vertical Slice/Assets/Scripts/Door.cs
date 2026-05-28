@@ -32,6 +32,7 @@ public class Door : Items
             //Locator.Instance._ui.GameWin();
             _playerTrans.position = new Vector3 (28f, 2f, -9f);
             Locator.Instance._diaManage._l2Start = true;
+            Locator.Instance._diaManage.gameObject.SetActive(true);
         }
     }
 

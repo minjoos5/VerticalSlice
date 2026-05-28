@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
         _keyActive = Locator.Instance._ui._checkMap;
         //(bool)Variables.Scene(_key).Get("_correctTape");
         _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
-        Debug.Log("_keyActive: " + _keyActive);
+        //Debug.Log("_keyActive: " + _keyActive);
 
         if (_keyActive == true  && _gotKey == true)
         {
