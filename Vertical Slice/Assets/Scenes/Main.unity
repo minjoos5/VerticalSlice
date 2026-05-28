@@ -843,7 +843,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -2206,7 +2206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &530091448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2351,6 +2351,7 @@ MonoBehaviour:
   _itemDetected: 0
   _trueTapeObj: {fileID: 3672354366859014148}
   _npcObj: {fileID: 645139876}
+  _npcl2Obj: {fileID: 1557237274}
   _key: {fileID: 2463706537328403156}
   _handKnife: {fileID: 222719205}
   _handCB: {fileID: 2108504751}
@@ -12309,7 +12310,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108504751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d48ca9344fc44604c962ca0273261085, type: 2}
   m_CullingMode: 0
@@ -12370,7 +12371,8 @@ MonoBehaviour:
   _NPCL2rb: {fileID: 1557237279}
   _attackSFX: {fileID: 1085326252}
   _player: {fileID: 530091452}
-  _NPCL2: {fileID: 1557237285}
+  _NPCL2trans: {fileID: 1557237285}
+  _NPCL2: {fileID: 1557237274}
   _mainCamera: {fileID: 1480751161}
   _handCB: {fileID: 2108504751}
   _power: 300
