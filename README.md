@@ -1,3 +1,4 @@
+<img width="2878" height="1636" alt="Shader Graph" src="https://github.com/user-attachments/assets/0a8832c3-b9c2-49ec-8701-e8ef0fd6a4ae" />
 # GDIM33 Vertical Slice
 ## Milestone 1 Devlog
 ### Complicating Factors
@@ -63,6 +64,7 @@ The Unity system I want checked is the NPC's Navmesh: the navigation AI of the N
 
 ## Milestone 3 Devlog
 ### Answer 1
+<img width="2878" height="1636" alt="Shader Graph" src="https://github.com/user-attachments/assets/bad786fc-77f1-48a9-99a7-fb1e5cbbdb47" />
 
 ### Answer 2
 During my playtest, I got feedback on the game UI and the player’s collider. The playtesters wanted to see the maps multiple times or have better legends on the map. In addition, the player capsule’s thick collider made the player stuck between the walls when they were trying to avoid the NPC’s attack. Thus, I changed the map’s X icon to a key shape for better understanding and enabled the map to open multiple times by pressing the tab key. I also adjusted the collider’s size to prevent a wall-stuck situation.
