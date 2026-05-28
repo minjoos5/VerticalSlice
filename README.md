@@ -64,7 +64,17 @@ The Unity system I want checked is the NPC's Navmesh: the navigation AI of the N
 
 ## Milestone 3 Devlog
 ### Answer 1
+#### **This shader can be found when the game starts. This shader displays with the dialogue panel.**
 <img width="2878" height="1636" alt="Shader Graph" src="https://github.com/user-attachments/assets/bad786fc-77f1-48a9-99a7-fb1e5cbbdb47" />
+- Lerp Time node:
+    - The time graph looks like (sin+1)/2. This is because of the same reason as the week 8 in-class activity. When I just use the sine graph, the screen turns white, not leaving it black. Thus, I used the same equation to prevent the screen from becoming white due to a negative value.
+- Lerp A node: 
+    - The Lerp node gets an A value from the URP sample buffer node, which in turn gets the full-screen color buffer.
+- Lerp B node: 
+    - I put the white circle with black background texture on the sample texture 2D node. To ensure the shader effect displays on the screen, even as the 3D model changes in the background, I connected the screen position node to the UV value. I subtracted the white value from the image since I wanted the effect to show only the black glitches on the screen, like eye blinking. The random range node gets the min range value and the max range value with the seed (UV) node. It randomly selects a number between 0 and 10 based on the UV node. It multiplies the time node, which means it doesn’t repeat between -1 and 1 like sine and cosine nodes. It progresses infinitely. The fraction node keeps the glitch effects, maintaining its glitchy status, preventing getting too large a value from the multiply node. The dither node gets the fraction value and draws the pixelated texture on the screen position. It multiplies with the black background with a transparent circle in the middle, forming the glitchy effect with a transparent circle in the middle of the screen.
+- The Lerp node combines the values from A and B together and prints the calculated value following the sine graph assigned to the T value. It connects to the base color fragment node and applies a blinking, glitchy effect to the screen.
+
+
 
 ### Answer 2
 During my playtest, I got feedback on the game UI and the player’s collider. The playtesters wanted to see the maps multiple times or have better legends on the map. In addition, the player capsule’s thick collider made the player stuck between the walls when they were trying to avoid the NPC’s attack. Thus, I changed the map’s X icon to a key shape for better understanding and enabled the map to open multiple times by pressing the tab key. I also adjusted the collider’s size to prevent a wall-stuck situation.
