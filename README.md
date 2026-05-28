@@ -1,4 +1,3 @@
-<img width="2878" height="1636" alt="Shader Graph" src="https://github.com/user-attachments/assets/0a8832c3-b9c2-49ec-8701-e8ef0fd6a4ae" />
 # GDIM33 Vertical Slice
 ## Milestone 1 Devlog
 ### Complicating Factors
