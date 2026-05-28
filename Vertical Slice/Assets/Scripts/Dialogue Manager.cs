@@ -15,15 +15,21 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] public GameObject _npcObj;
 
+    [SerializeField] public GameObject _npcL2Obj;
+
     [SerializeField] public GameObject _playerObj;
 
     [SerializeField] public GameObject _introCam;
 
     private int _currentLine = 0;
 
+    private int _currentLineL2 = 0;
+
     private Monologue _currentNode;
 
     public bool _gameStart;
+
+    public bool _l2Start = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,13 +43,22 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _gameStart == false)
         {
             NextLine();
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.Space) && _gameStart == true)
+        {
+            NextLineL2();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) && _gameStart == false)
         {
             EndDialogue();
+        }
+        else if (Input.GetKeyDown(KeyCode.X) && _gameStart == true)
+        {
+            EndDialogueL2();
         }
     }
 
@@ -62,7 +77,13 @@ public class DialogueManager : MonoBehaviour
         _npcObj.SetActive(true);
         _playerObj.SetActive(true);
         _introCam.SetActive(false);
-        
+    }
+
+    private void EndDialogueL2()
+    {
+        _currentLineL2 = 0;
+        gameObject.SetActive(false);
+        _npcL2Obj.SetActive(true);
     }
     void NextLine()
     {
@@ -71,6 +92,21 @@ public class DialogueManager : MonoBehaviour
             // if we still have NPC lines left, keep playing NPC lines
             ShowLines(_scriptableObj._lines[_currentLine]);
             _currentLine++;
+        }
+        else 
+        {
+            // if there are no NPC or player lines left, close dialogue UI
+            EndDialogue();
+        }
+    }
+
+    void NextLineL2()
+    {
+        if(_currentLineL2 < _scriptableObjL2._lines.Length)
+        {
+            // if we still have NPC lines left, keep playing NPC lines
+            ShowLines(_scriptableObjL2._lines[_currentLineL2]);
+            _currentLineL2++;
         }
         else 
         {

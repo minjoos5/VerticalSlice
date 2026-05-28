@@ -3753,10 +3753,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1711438166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.85227597, y: 0.15200001}
-  m_AnchorMax: {x: 0.976276, y: 0.42033005}
-  m_AnchoredPosition: {x: 3.2199097, y: 8.599998}
-  m_SizeDelta: {x: -2.4400635, y: -15.548004}
+  m_AnchorMin: {x: 0.8276715, y: 0.06333995}
+  m_AnchorMax: {x: 0.98800004, y: 0.36333004}
+  m_AnchoredPosition: {x: 0.2999878, y: 0.5}
+  m_SizeDelta: {x: -1.7567701, y: -0.060199738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703919947
 MonoBehaviour:
@@ -3807,10 +3807,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.55
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3843,7 +3843,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.9959717, y: 0, z: 0, w: -15.701691}
+  m_margin: {x: -0.42279053, y: 0, z: 0, w: -0.15285492}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10154,6 +10154,7 @@ MonoBehaviour:
   _playerText: {fileID: 2049261563}
   _playerDialogue: {fileID: 1711438165}
   _scriptableObj: {fileID: 11400000, guid: 5e2f3a7e2e787ef41a61228520a239ff, type: 2}
+  _scriptableObjL2: {fileID: 11400000, guid: db66a12a2f36e4e49a782516779cec50, type: 2}
   _npcObj: {fileID: 645139876}
   _playerObj: {fileID: 530091446}
   _introCam: {fileID: 1123817262}

@@ -12,6 +12,8 @@ public class Door : Items
 
     public Transform _playerTrans;
 
+
+
     public void Start()
     {
         //bool _gotKey = (bool)Variables.Scene(_key).Get("_gotKey");
@@ -29,6 +31,7 @@ public class Door : Items
         {
             //Locator.Instance._ui.GameWin();
             _playerTrans.position = new Vector3 (28f, 2f, -9f);
+            Locator.Instance._diaManage._l2Start = true;
         }
     }
 
