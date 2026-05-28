@@ -180,7 +180,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fast Run
-  m_Speed: 0.6
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3393185079203704897}
@@ -195,7 +195,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 158ea4130f47c6247a9f37c4cbbc6e7f, type: 2}
+  m_Motion: {fileID: 7400000, guid: bef13dc15a7d42e4694ddcd442c0bfd4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -207,7 +207,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC Controller
+  m_Name: L2 NPC Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isChasing
@@ -340,7 +340,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walking
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8291447643909843364}
@@ -355,7 +355,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bc5d30ac17b72cd4f835e1ff77387278, type: 2}
+  m_Motion: {fileID: 7400000, guid: 58bc672e67aa21c458c06972dbaa17ab, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

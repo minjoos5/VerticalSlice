@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject _playerDialogue;
     [SerializeField] private Monologue _scriptableObj;
 
+    [SerializeField] private Monologue _scriptableObjL2;
+
     [SerializeField] public GameObject _npcObj;
 
     [SerializeField] public GameObject _playerObj;
