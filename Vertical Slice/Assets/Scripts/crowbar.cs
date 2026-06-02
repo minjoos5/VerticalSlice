@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 
 public class Crowbar : MonoBehaviour
 {
-    public Animator _animator;
+    //public Animator _animator;
 
     public bool _hasCB = false;
 

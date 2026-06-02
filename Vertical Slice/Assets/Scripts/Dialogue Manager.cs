@@ -44,10 +44,9 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("dialogue l2start is " + _l2Start);
+        //Debug.Log("dialogue l2start is " + _l2Start);
         if (_l2Start == true)
         {
-            
             gameObject.SetActive(true);
         }
 
@@ -119,7 +118,7 @@ public class DialogueManager : MonoBehaviour
         else 
         {
             // if there are no NPC or player lines left, close dialogue UI
-            EndDialogue();
+            EndDialogueL2();
         }
     }
 }

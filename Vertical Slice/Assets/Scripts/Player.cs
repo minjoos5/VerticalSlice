@@ -218,6 +218,7 @@ public class Player : MonoBehaviour
                 //Locator.Instance._ui._EToInteract.SetActive(false);
                 Locator.Instance._door.Escape();
                 _handKnife.SetActive(false);
+                //_npcl2Obj.SetActive(true);
             }
             
             
