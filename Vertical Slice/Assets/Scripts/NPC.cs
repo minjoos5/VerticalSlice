@@ -41,36 +41,48 @@ public class NPC : MonoBehaviour
 
     public bool _isDetected = false;
 
+    public SkinnedMeshRenderer _rendererJoint;
+
+    public SkinnedMeshRenderer _rendererSurface;
+
+    public GameObject _joint;
+
+    public GameObject _surface;
+
+    Color _originColJoint;
+
+    Color _originColSurface;
+
     //public bool _playerAttackNPC;
 
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        
-        //gameObject.SetActive(false);
     }
 
     void Start()
     {
         gameObject.SetActive(false);
+        _rendererJoint = _joint.GetComponent<SkinnedMeshRenderer>();
+        _rendererSurface = _surface.GetComponent<SkinnedMeshRenderer>();
+        _originColJoint = _rendererJoint.material.color;
+        _originColSurface = _rendererSurface.material.color;
     }
 
 
-    /*void Start()
+    public void hitDamage()
     {
-        StartCoroutine(StartNPC());
+        StartCoroutine(hitFlash());
     }
 
-    public IEnumerator StartNPC()
+    public IEnumerator hitFlash()
     {
-        Debug.Log("disabled");
-        
-        yield return new WaitUntil(() => Locator.Instance._diaManage._gameStart == true);
-        
-        Debug.Log("npc activated");
-    }*/
-
-    // Update is called once per frame
+        _rendererJoint.material.color = Color.red;
+        _rendererSurface.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        _rendererJoint.material.color = _originColJoint;
+        _rendererSurface.material.color = _originColSurface;
+    }
     void Update()
     {
         agent.SetDestination(target.position);

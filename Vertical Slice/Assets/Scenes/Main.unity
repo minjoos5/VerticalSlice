@@ -2715,6 +2715,7 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
+  _renderer: {fileID: 0}
 --- !u!54 &645139884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2982,7 +2983,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: d8baa173ea708db4b94442b5c9116b38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11208,6 +11209,7 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
+  _renderer: {fileID: 0}
 --- !u!1 &2059272536
 GameObject:
   m_ObjectHideFlags: 0

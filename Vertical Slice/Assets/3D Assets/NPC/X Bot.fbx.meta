@@ -15,7 +15,7 @@ ModelImporter:
       name: Beta_Joints_MAT1
     second: {fileID: 2100000, guid: 1616609c857b32948b255a3115c026d7, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
