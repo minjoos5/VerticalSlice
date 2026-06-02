@@ -264,7 +264,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Variables.Scene(_npcl2Obj).Set("_playerAttack", true);
+                Variables.Scene(_npcl2Obj).Set("_playerAttackL2", true);
                 Locator.Instance._cb.AttackwCB();
             }
         }
