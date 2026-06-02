@@ -920,10 +920,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 645139891}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 645139883}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc14f0028c402b14690ced61aaa46619,
         type: 3}
@@ -2715,7 +2711,10 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
-  _renderer: {fileID: 0}
+  _rendererJoint: {fileID: 1530631424}
+  _rendererSurface: {fileID: 1818249157}
+  _joint: {fileID: 1530631422}
+  _surface: {fileID: 1818249155}
 --- !u!54 &645139884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2963,48 +2962,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!23 &645139891
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645139876}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d8baa173ea708db4b94442b5c9116b38, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &650903693
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,6 +8359,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1530631422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2656431786303760210, guid: bc14f0028c402b14690ced61aaa46619,
+    type: 3}
+  m_PrefabInstance: {fileID: 293452684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1530631424 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3853268898807207900, guid: bc14f0028c402b14690ced61aaa46619,
+    type: 3}
+  m_PrefabInstance: {fileID: 293452684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1532075549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9095,6 +9064,10 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
+  _rendererJoint: {fileID: 3853268899101136346}
+  _rendererSurface: {fileID: 6148737316183717885}
+  _joint: {fileID: 6566940250239916712}
+  _surface: {fileID: 7882376022390684833}
 --- !u!1 &1573449855
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,6 +10120,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4977131475666943381, guid: 60b4c96d30b7046479a91d0aac080bed, type: 3}
+--- !u!1 &1818249155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7882376022164389543, guid: bc14f0028c402b14690ced61aaa46619,
+    type: 3}
+  m_PrefabInstance: {fileID: 293452684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1818249157 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6148737315974723067, guid: bc14f0028c402b14690ced61aaa46619,
+    type: 3}
+  m_PrefabInstance: {fileID: 293452684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1873486692
 GameObject:
   m_ObjectHideFlags: 0
@@ -11209,7 +11194,10 @@ MonoBehaviour:
   _distance: 0
   _isAttacking: 0
   _isDetected: 0
-  _renderer: {fileID: 0}
+  _rendererJoint: {fileID: 0}
+  _rendererSurface: {fileID: 0}
+  _joint: {fileID: 0}
+  _surface: {fileID: 0}
 --- !u!1 &2059272536
 GameObject:
   m_ObjectHideFlags: 0

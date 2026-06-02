@@ -41,6 +41,18 @@ public class NPCL2 : MonoBehaviour
 
     public bool _isDetected = false;
 
+    public SkinnedMeshRenderer _rendererJoint;
+
+    public SkinnedMeshRenderer _rendererSurface;
+
+    public GameObject _joint;
+
+    public GameObject _surface;
+
+    Color _originColJoint;
+
+    Color _originColSurface;
+
     //public bool _playerAttackNPC;
 
     public void Awake()
@@ -52,7 +64,26 @@ public class NPCL2 : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
+        _rendererJoint = _joint.GetComponent<SkinnedMeshRenderer>();
+        _rendererSurface = _surface.GetComponent<SkinnedMeshRenderer>();
+        _originColJoint = _rendererJoint.material.color;
+        _originColSurface = _rendererSurface.material.color;
+    }
+
+
+    public void hitDamage()
+    {
+        StartCoroutine(hitFlash());
+    }
+
+    public IEnumerator hitFlash()
+    {
+        _rendererJoint.material.color = Color.red;
+        _rendererSurface.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        _rendererJoint.material.color = _originColJoint;
+        _rendererSurface.material.color = _originColSurface;
     }
 
     // Update is called once per frame

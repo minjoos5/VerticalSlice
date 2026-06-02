@@ -79,7 +79,7 @@ public class NPC : MonoBehaviour
     {
         _rendererJoint.material.color = Color.red;
         _rendererSurface.material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         _rendererJoint.material.color = _originColJoint;
         _rendererSurface.material.color = _originColSurface;
     }
