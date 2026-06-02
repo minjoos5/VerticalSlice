@@ -126,3 +126,4 @@ Game items:
 SFX
 - [Attack SFX](https://pixabay.com/sound-effects/film-special-effects-attack-sound-3-384911/)
 - [Enemy Detected SFX](https://pixabay.com/sound-effects/film-special-effects-enemy-detected-103347/)
+- [Ambience](https://pixabay.com/sound-effects/film-special-effects-backrooms-ambience-2-522106/)
