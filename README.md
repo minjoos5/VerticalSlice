@@ -95,7 +95,12 @@ During my playtest, I got feedback on the game UI and the player’s collider. T
 I added one more backroom for the gameplay loop. Also, I replaced the key with a crowbar. In this new map, the player needs to find the crowbar in the map and smash the door (E to interact) with it to escape from the final backroom. The NPC chases you more rapidly, too. One more dialogue will appear in the second stage to explain the simple direction alongside the message. The map won't be provided at the second level to increase difficulty compared to the first level.
 
 ## Final Devlog
-Final Devlog goes here.
+### Answer 1
+### Answer 2
+### Answer 3
+#### 3-1
+#### 3-2
+#### 3-3
 ## Open-source assets
 
 [Backroom asset](https://sketchfab.com/3d-models/backrooms-1da6a7f2e0294ba9a4123f61244811a8)
@@ -121,3 +126,4 @@ Game items:
 SFX
 - [Attack SFX](https://pixabay.com/sound-effects/film-special-effects-attack-sound-3-384911/)
 - [Enemy Detected SFX](https://pixabay.com/sound-effects/film-special-effects-enemy-detected-103347/)
+- [Ambience](https://pixabay.com/sound-effects/film-special-effects-backrooms-ambience-2-522106/)
