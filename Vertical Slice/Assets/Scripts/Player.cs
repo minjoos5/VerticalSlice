@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _runSpeed = 10f;
-    [SerializeField] private float _mouseSensitivity = 75f;
+    [SerializeField] private float _mouseSensitivity = 50f;
 
     [SerializeField] private CapsuleCollider _collider;
 
