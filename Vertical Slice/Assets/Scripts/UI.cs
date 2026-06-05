@@ -82,13 +82,13 @@ public class UI : MonoBehaviour
             _map.SetActive(true);
         }
 
-        if (_gameover == enabled || _gamewin == enabled)
+        /*if (_gameover == enabled || _gamewin == enabled)
         {
             //_EToInteract.SetActive(false);
             //_clickToInteract.SetActive(false);
             Destroy(_EToInteract);
             Destroy(_clickToInteract);
-        }
+        }*/
 
         /*if (Input.GetKeyDown(KeyCode.E) && Locator.Instance._clicked._itemDetected == true)
         {
