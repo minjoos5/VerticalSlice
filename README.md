@@ -95,9 +95,9 @@ During my playtest, I got feedback on the game UI and the player’s collider. T
 I added one more backroom for the gameplay loop. Also, I replaced the key with a crowbar. In this new map, the player needs to find the crowbar in the map and smash the door (E to interact) with it to escape from the final backroom. The NPC chases you more rapidly, too. One more dialogue will appear in the second stage to explain the simple direction alongside the message. The map won't be provided at the second level to increase difficulty compared to the first level.
 
 ## Final Devlog
-### Answer 1
+### Answer 1:
 The original game plan was to make a horror game with an unpredictable, chasing NPC. The core gameplay loop is finding appropriate items and fleeing from the dangerous NPC. The main goal of the game is to escape from the backroom, so the player needs to find the appropriate items on each level and open the door (or the lift). In the current vertical slice, I’ve implemented two different backrooms and NPCs with different difficulty levels. The NPCs will chase the player with the weapon, aiming to kill them throughout the game. The NPCs lead the player to escape from the backroom by finding appropriate items, such as a cassette tape and the key. The player can collect items, see the map through the cassette player, and attack the NPC with weapons (knife and crowbar). I wanted to demonstrate the gameplay of the chase and escape of the full game through this vertical slice. The vertical slice lets the player experience the chase between the NPC and the player, making the player find the appropriate items around the map to escape from it.
-### Answer 2
+### Answer 2:
 
 <img width="800" height="450" alt="ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/15abc672-e4f2-4c9a-82e0-b908794742c5" />
 
@@ -107,7 +107,7 @@ The original game plan was to make a horror game with an unpredictable, chasing 
 <img width="1107" height="540" alt="vertical slice image 2" src="https://github.com/user-attachments/assets/4bc227d7-f9e9-499e-93dc-b3fb36b016f3" />
 
 I added the rendering effect that makes the NPC flash red when hit by the player. When the player presses E with the knife toward the NPCs (level 1 and level 2), their whole body changes color to red around 0.2 seconds. After 0.2 seconds, its body color returns. Each NPC’s C# script (NPC and NPC L2 scripts) retrieves information about the skinned mesh renderer and game objects via serialized fields in the inspector. At the start, the script saves the original color of the NPC’s body parts. The coroutine method (hitDamage()) changes the body color to red for 0.2 seconds. This method is called in the NPC’s statemachine in the hit state. Thus, the NPC changes color during the hit animation.
-### Answer 3
+### Answer 3:
 #### 3-1
 I want to use these methods in my future projects, too. This is because they really helped me a lot with writing code and visual scripting. I could check my current track by making a simple to-do list on the diagrams (or the breakdowns). In addition, I could visualize the relationships between each game object and its components to increase my understanding. The text breakdown was also useful, as I could create my own directions for implementing the game feature by following it step by step, as in the in-class activities. 
 #### 3-2
