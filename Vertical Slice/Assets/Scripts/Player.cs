@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
         RaycastHit _hit;
         Ray _ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(_ray, out _hit, 5.0f) && _hit.collider.gameObject.CompareTag("Item"))
+        if (Physics.Raycast(_ray, out _hit, 5.0f) && (_hit.collider.gameObject.CompareTag("Item")  || _hit.collider.gameObject.CompareTag("CB")))
         {
             Locator.Instance._ui._clickToInteract.SetActive(true);
         }
@@ -281,7 +281,7 @@ public class Player : MonoBehaviour
         {
             //Debug.DrawRay(_mainCamera.transform.position, transform.TransformDirection(Vector3.forward) * _hit.distance, Color.red);
 
-            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer") || _hit.collider.gameObject.CompareTag("Lift") || _hit.collider.gameObject.CompareTag("CB"))
+            if (_hit.collider.gameObject.CompareTag("Door") || _hit.collider.gameObject.CompareTag("CassettePlayer") || _hit.collider.gameObject.CompareTag("Lift"))
             {
                 Locator.Instance._ui._EToInteract.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
